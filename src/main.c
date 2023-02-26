@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include "libx_opengl/mlx.h"
-#include "utils/map_utils.h"
-#include "map.h"
 
 typedef struct 		s_imgData
 {
