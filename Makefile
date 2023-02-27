@@ -6,9 +6,13 @@ CC		= 	gcc
 
 RM 		= 	rm -f
 
-SRCS 	=	main.c map/map_checking_utils.c map_checking.c
+SRCS 	=	main.c \
+			src/map/map_checking.c src/map/map_checking_utils.c \
+			src/image/image.c
 
-OBJS 	= 	main.o map/map_checking_utils.o map_checking.o
+OBJS 	= 	main.o \
+			src/map/map_checking.o src/map/map_checking_utils.o \
+			src/image/image.o
 
 LIB		= 	-L libx_opengl -lmlx -framework OpenGL -framework AppKit -lz
 
@@ -18,14 +22,17 @@ all: $(NAME)
 fclean:
 	rm -rf *.o
 
-map_checking.o: map/map_checking.c include/map_checking.h include/map_checking_utils.h
-	$(CC) map/map_checking.c -c -o map/map_checking.o $(FLAGS)
-
 main.o: main.c
-	$(CC) main.c -c -o main.o $(FLAGS)
+	$(CC) $(SRCS) -c -o $(OBJS) $(FLAGS)
 
-map/map_checking_utils.o: map/map_checking_utils.o  utils/map_utils.h
-	$(CC) utils/map_utils.c -c -o utils/map_utils.o $(FLAGS)
+map_checking.o: src/map/map_checking.c include/map_checking.h include/map_checking_utils.h
+	$(CC) src/map/map_checking.c -c -o src/map/map_checking.o $(FLAGS)
 
-so_long: map.o so_long.o utils/map_utils.o
-	$(CC) map.o so_long.o utils/map_utils.o $(LIB) -o $(NAME)
+map/map_checking_utils.o: src/map/map_checking_utils.c src/map/map_checking_utils.h
+	$(CC) src/map/map_checking_utils.c -c -o map/map_checking_utils.o $(FLAGS)
+
+image.o : src/image/image.c include/image.h
+	$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
+
+so_long:  main.o
+	$(CC) main.o $(LIB) -o $(NAME)
