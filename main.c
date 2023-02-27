@@ -25,6 +25,8 @@ int     main(void)
 	image.width = 12;
 	window.width = 12;
 
+	//toto test
+
 
 	return(0);
 }
