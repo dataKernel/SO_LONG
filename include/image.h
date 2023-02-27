@@ -18,6 +18,7 @@ typedef struct  s_img
     void    *imgPtr;
     void    *addr;
 
+    char    *path;
     int     lineLength;
     int     endian;
     int     bpp;

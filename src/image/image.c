@@ -24,3 +24,16 @@ t_img   create_image(int w, int h, void *mlx)
 
     return(image);
 }
+
+/*
+while(ligne < sprite.height)
+    {
+        pixel = 0;
+        while(pixel < sprite.width)
+        {
+            ft_pixel_put(&map, 15 + pixel, 15 + ligne, ft_pixel_get(sprite, pixel, ligne));
+            pixel++;
+        }
+        ligne++;
+    }
+*/
