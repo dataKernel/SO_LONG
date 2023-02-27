@@ -1,11 +1,11 @@
 #ifndef MAP_UTILS_H
 # define MAP_UTILS_H
 
-#include <stdbool.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+# include <stdbool.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 # define SPACE '0'
 # define WALL '1'

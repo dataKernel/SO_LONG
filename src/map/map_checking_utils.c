@@ -1,4 +1,4 @@
-#include "map_utils.h"
+#include "include/map_checking_utils.h"
 
 char    *read_map(char *path)
 {
