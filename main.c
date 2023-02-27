@@ -22,6 +22,9 @@ int     main(void)
 	t_win 	window;
 	t_img 	image;
 
+	image.width = 12;
+	window.width = 12;
+
 
 	return(0);
 }

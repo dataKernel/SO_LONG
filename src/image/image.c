@@ -1,4 +1,4 @@
-#include "../../include/image.h";
+#include "../../include/image.h"
 
 t_win   create_window(int w, int h, char *title)
 {
@@ -8,7 +8,7 @@ t_win   create_window(int w, int h, char *title)
     window.height = h;
     window.title = title;
     window.mlxPtr = mlx_init();
-    window.winPtr = mlx_new_window(w, h, title);
+    window.winPtr = mlx_new_window(window.mlxPtr, w, h, title);
 
     return(window);
 }

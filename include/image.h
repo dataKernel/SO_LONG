@@ -1,6 +1,8 @@
 #ifndef IMAGE_H
 # define IMAGE_H
 
+# include "../libx_opengl/mlx.h"
+
 typedef struct  s_win
 {
     void    *mlxPtr;

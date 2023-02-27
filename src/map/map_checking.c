@@ -1,5 +1,5 @@
-#include "include/map_checking.h"
-#include "include/map_checking_utils.h"
+#include "../../include/map_checking.h"
+#include "../../include/map_checking_utils.h"
 
 bool    check_map_has_PER(char *str)
 {
