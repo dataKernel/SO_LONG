@@ -22,11 +22,9 @@ int     main(void)
 	t_win 	window;
 	t_img 	image;
 
-	image.width = 12;
-	window.width = 12;
-
-	//toto test
-
-
+	window = create_window(1400, 700, "solong.exe");
+	image = create_image(window.width, window.height, window.mlxPtr);
+	mlx_put_image_to_window(window.mlxPtr, window.winPtr, image.imgPtr, 0, 0);
+	mlx_loop(window.mlxPtr);
 	return(0);
 }
