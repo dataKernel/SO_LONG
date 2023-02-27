@@ -27,6 +27,6 @@ typedef struct  s_img
 }t_img;
 
 t_win   create_window(int w, int h, char *title);
-t_img   crate_image(int w, int h, void *mlx);
+t_img   create_image(int w, int h, void *mlx);
 
 #endif
