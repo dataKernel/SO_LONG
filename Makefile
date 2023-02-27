@@ -22,17 +22,17 @@ all: $(NAME)
 fclean:
 	rm -rf *.o
 
-main.o: main.c
-	$(CC) $(SRCS) -c -o $(OBJS) $(FLAGS)
+so_long: $(OBJS)
+	$(CC) $(OBJS) $(LIB) -o $(NAME)
 
-map_checking.o: src/map/map_checking.c include/map_checking.h include/map_checking_utils.h
+src/map/map_checking.o: src/map/map_checking.c include/map_checking.h include/map_checking_utils.h
 	$(CC) src/map/map_checking.c -c -o src/map/map_checking.o $(FLAGS)
 
-map/map_checking_utils.o: src/map/map_checking_utils.c src/map/map_checking_utils.h
-	$(CC) src/map/map_checking_utils.c -c -o map/map_checking_utils.o $(FLAGS)
+src/map/map_checking_utils.o: src/map/map_checking_utils.c include/map_checking_utils.h
+	$(CC) src/map/map_checking_utils.c -c -o src/map/map_checking_utils.o $(FLAGS)
 
-image.o : src/image/image.c include/image.h
+src/image/image.o : src/image/image.c include/image.h
 	$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
 
-so_long:  main.o
-	$(CC) main.o $(LIB) -o $(NAME)
+main.o: main.c
+	$(CC) main.c -c -o main.o $(FLAGS)
