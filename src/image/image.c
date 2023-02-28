@@ -25,6 +25,16 @@ t_img   create_image(int w, int h, void *mlx)
     return(image);
 }
 
+t_img   create_sprite(char *path, void *mlxPtr)
+{
+    t_img   sprite;
+
+    sprite.imgPtr = mlx_xpm_to_image(mlxPtr, path, sprite.width, sprite.height);
+    sprite.addr = mlx_get_data_addr(sprite.imgPtr, sprite.bpp, sprite.lineLength, sprite.endian);
+
+    return(sprite);
+}
+
 /*
 while(ligne < sprite.height)
     {
