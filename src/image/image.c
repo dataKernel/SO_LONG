@@ -1,4 +1,5 @@
 #include "../../include/image.h"
+#include "../../include/image_utils.h"
 #include <stdio.h>
 
 
@@ -36,12 +37,6 @@ t_img   create_sprite(char *path, void *mlxPtr)
 
     return(sprite);
 }
-
-void    copy_sprite_in_image(t_img sprite, int x, int y)
-{
-    
-}
-
 
 
 
