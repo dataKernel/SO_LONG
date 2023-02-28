@@ -1,5 +1,5 @@
-#ifndef MAP_H
-# define MAP_H
+#ifndef MAP_CHECKING_H
+# define MAP_CHECKING_H
 
 # include <stdbool.h>
 
