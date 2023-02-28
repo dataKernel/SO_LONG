@@ -1,4 +1,6 @@
 #include "../../include/image.h"
+#include <stdio.h>
+
 
 t_win   create_window(int w, int h, char *title)
 {
@@ -13,13 +15,13 @@ t_win   create_window(int w, int h, char *title)
     return(window);
 }
 
-t_img   create_image(int w, int h, void *mlx)
+t_img   create_image(int w, int h, void *mlxPtr)
 {
     t_img   image;
 
     image.width = w;
     image.height = h;
-    image.imgPtr = mlx_new_image(mlx, w, h);
+    image.imgPtr = mlx_new_image(mlxPtr, w, h);
     image.addr = mlx_get_data_addr(image.imgPtr, &image.bpp, &image.lineLength, &image.endian);
 
     return(image);
@@ -29,11 +31,37 @@ t_img   create_sprite(char *path, void *mlxPtr)
 {
     t_img   sprite;
 
-    sprite.imgPtr = mlx_xpm_to_image(mlxPtr, path, sprite.width, sprite.height);
-    sprite.addr = mlx_get_data_addr(sprite.imgPtr, sprite.bpp, sprite.lineLength, sprite.endian);
+    sprite.imgPtr = mlx_xpm_file_to_image(mlxPtr, path, &sprite.width, &sprite.height);
+    sprite.addr = mlx_get_data_addr(sprite.imgPtr, &sprite.bpp, &sprite.lineLength, &sprite.endian);
 
     return(sprite);
 }
+
+void    copy_sprite_in_image(t_img sprite, int x, int y)
+{
+    
+}
+
+
+
+
+
+/*
+unsigned int     ft_pixel_get(t_imgData sprite, int x, int y)
+{
+    char     *dst = sprite.addr + (y *sprite.line_length + x * (sprite.bits_per_pixel / 8));
+    return *(unsigned int *)dst;
+}
+
+void     ft_pixel_put(t_imgData *imgData, int x, int y, int color)
+{
+    char     *dst;
+
+    dst = imgData->addr + (y * imgData->line_length + x * (imgData->bits_per_pixel / 8));
+    *(unsigned int*)dst = color;
+}
+*/
+
 
 /*
 while(ligne < sprite.height)
