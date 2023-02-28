@@ -8,11 +8,11 @@ RM 		= 	rm -f
 
 SRCS 	=	main.c \
 			src/map/map_checking.c src/map/map_checking_utils.c \
-			src/image/image.c
+			src/image/image.c src/image/image_utils.c
 
 OBJS 	= 	main.o \
 			src/map/map_checking.o src/map/map_checking_utils.o \
-			src/image/image.o
+			src/image/image.o src/image/image_utils.o
 
 LIB		= 	-L libx_opengl -lmlx -framework OpenGL -framework AppKit -lz
 
@@ -33,6 +33,9 @@ src/map/map_checking_utils.o: src/map/map_checking_utils.c include/map_checking_
 
 src/image/image.o : src/image/image.c include/image.h
 	$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
+
+src/image/image_utils.o : src/image/image_utils.c include/image_utils.h
+	$(CC) src/image/image_utils.c -c -o src/image/image_utils.o $(FLAGS)
 
 main.o: main.c
 	$(CC) main.c -c -o main.o $(FLAGS)
