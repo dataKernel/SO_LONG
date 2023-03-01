@@ -1,6 +1,5 @@
 #include "../../include/image.h"
 #include "../../include/image_utils.h"
-#include <stdio.h>
 
 
 t_win   create_window(int w, int h, char *title)
@@ -37,36 +36,3 @@ t_img   create_sprite(char *path, void *mlxPtr)
 
     return(sprite);
 }
-
-
-
-
-/*
-unsigned int     ft_pixel_get(t_imgData sprite, int x, int y)
-{
-    char     *dst = sprite.addr + (y *sprite.line_length + x * (sprite.bits_per_pixel / 8));
-    return *(unsigned int *)dst;
-}
-
-void     ft_pixel_put(t_imgData *imgData, int x, int y, int color)
-{
-    char     *dst;
-
-    dst = imgData->addr + (y * imgData->line_length + x * (imgData->bits_per_pixel / 8));
-    *(unsigned int*)dst = color;
-}
-*/
-
-
-/*
-while(ligne < sprite.height)
-    {
-        pixel = 0;
-        while(pixel < sprite.width)
-        {
-            ft_pixel_put(&map, 15 + pixel, 15 + ligne, ft_pixel_get(sprite, pixel, ligne));
-            pixel++;
-        }
-        ligne++;
-    }
-*/

@@ -59,26 +59,11 @@ bool    check_map_is_rectangular(char *str)
 }
 
 
-bool    check_map_is_walled(char *str)
+bool    check_map_is_walled(char *str, int width, int height)
 {
     int     last_posi;
-    int     width;
-    int     height;
     int     i;
-	//on peut créer une fonction avec str qui va check la largeur et hauteur
-    //on check la largeur et hauteur de la map
-    width = 0;
-    height = 0;
-    i = 0;
-    while(str[width] != '\n')
-        width++;
-    while(str[i])
-    {
-        if(str[i] == '\n')
-            height++;
-        i++;
-    }
-    //on verifie que la 1ere et derniere ligne sont walled
+
     i = 0;
     while(i < width)
     {
@@ -86,7 +71,7 @@ bool    check_map_is_walled(char *str)
             return(false);
         i++;
     }
-    i = ((width + 1) * height) - 2; // on va a la derniere posi de la map en exculant le \n
+    i = ((width + 1) * height) - 2;
     last_posi = i;
     while(i > (last_posi - (width - 1)))
     {

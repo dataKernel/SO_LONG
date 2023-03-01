@@ -36,13 +36,6 @@ bool check_position_libre(char *str, int position)
   return false;
 }
 
-int     get_index(int y, int x, int width)
-{
-    int     index;
-
-    index = width * y + x;
-    return(index);
-}
 
 int		check_width_line(char *str)
 {
@@ -60,3 +53,11 @@ int		check_width_line(char *str)
 	}
 	return(width);
 }
+
+// int     get_index(int y, int x, int width)
+// {
+    //     int     index;
+    //
+    //     index = width * y + x;
+    //     return(index);
+    // }
