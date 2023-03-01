@@ -13,9 +13,9 @@
 # define COLLECTIBLE 'C'
 # define EXIT 'E'
 
-bool    check_position_libre(char*, int);
-char    *read_map(char *);
-int     get_index(int, int, int);
-int     check_width_line(char *);
+bool check_position_libre(char *str, int position);
+char    *read_map(char *path);
+int     get_index(int y, int x, int width);
+int		check_width_line(char *str);
 
 #endif
