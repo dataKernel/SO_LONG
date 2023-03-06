@@ -31,10 +31,9 @@ int     main(void)
 		}
 		height += spriteGround1.height;
 	}
-	//we copy the character inside the map
-	copy_sprite_in_image(spriteChar, map, 360, 160);
 	//pushing the image map in the window
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
+	mlx_put_image_to_window(window.mlxPtr, window.winPtr, spriteChar.imgPtr, 360, 160);
 	mlx_loop(window.mlxPtr);
 
 	return(0);

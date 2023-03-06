@@ -34,8 +34,3 @@ void 			copy_sprite_in_image(t_img sprite, t_img image, int x, int y)
 		line++;
 	}
 }
-
-void 	transform_sprite_trans(t_img sprite)
-{
-	//...
-}
