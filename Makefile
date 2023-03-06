@@ -1,7 +1,7 @@
 ###VAR###
 NAME  	= 	so_long
 
-FLAGS 	= 	-Wall -Wextra -Werror
+FLAGS 	= 	
 CC		= 	gcc
 
 RM 		= 	rm -f
