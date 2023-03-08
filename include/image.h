@@ -1,6 +1,13 @@
 #ifndef IMAGE_H
 # define IMAGE_H
 
+# define 
+
+# define SPRITE_GROUND_1 "../../assets/sprites/ground_1.xpm"
+# define SPRITE_GROUND_2 "../../assets/sprites/ground_2.xpm"
+
+# define
+
 # include "../libx_opengl/mlx.h"
 
 typedef struct  s_win

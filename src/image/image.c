@@ -36,3 +36,9 @@ t_img   create_sprite(char *path, void *mlxPtr)
 
     return(sprite);
 }
+
+void    load_sprite()
+{
+    char    path[10];
+
+}
