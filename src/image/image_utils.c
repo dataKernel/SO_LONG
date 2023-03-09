@@ -1,6 +1,7 @@
+#include <string.h>
+#include <stdio.h>
 #include "../../include/image.h"
 #include "../../include/image_utils.h"
-#include <stdio.h>
 
 unsigned int 	ft_pixel_get(t_img image, int x, int y)
 {
@@ -32,4 +33,23 @@ void 			copy_sprite_in_image(t_img sprite, t_img image, int x, int y)
 		}
 		line++;
 	}
+}
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	const char		*source;
+	char			*destination;
+	size_t			i;
+
+	destination = dst;
+	source = src;
+	if (n == 0)
+		return (dst);
+	i = 0;
+	while (i < n)
+	{
+		destination[i] = source[i];
+		i++;
+	}
+	return (destination);
 }

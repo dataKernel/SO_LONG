@@ -7,7 +7,7 @@
 t_win   create_window(int w, int h, char *title)
 {
     t_win   window;
-
+    
     window.width = w;
     window.height = h;
     window.title = title;
@@ -52,22 +52,22 @@ void    load_path_sprite(char **arraySpritePath)
     arraySpritePath[8] = SPRITE_9;
 }
 
-void    load_sprite(void *mlxPtr)
+t_img   *load_sprite(void *mlxPtr)
 {
-    t_img   sprite[9];
+    t_img   spriteTab[9];
     t_img   *ptr;
-    char    *spritePath[9];
+    char    *spritePathTab[9];
     int     i;
 
     i = 0;
-    load_path_sprite(spritePath);
+    ptr = (t_img *)malloc(sizeof(ptr) * 9);
+    load_path_sprite(spritePathTab);
     while(i < 9)
     {
-        sprite[i] = create_sprite(spritePath[i], mlxPtr);
+        spriteTab[i] = create_sprite(spritePathTab[i], mlxPtr);
+        spriteTab[i].path = spritePathTab[i];
+        ptr[i] = spriteTab[i];
         i++;
     }
-
-    printf("elem char width : %i", sprite[1].width);
-    //ptr = (t_img *)malloc(sizeof(ptr) * 9);
-
+    return(ptr);
 }
