@@ -7,14 +7,14 @@ int     main(void)
 {
 	t_win 	window;
 	t_img 	map;
+	t_img 	*tabSprite;
 
-	int 	line;
-	int 	height;
-
-	height = 0;
 	window = create_window(405, 490, "solong.exe");
-	map = create_image(window.width, window.height, window.mlxPtr);
-	load_sprite(window.mlxPtr);
+	tabSprite = load_sprite(window.mlxPtr);
+	printf("%s", tabSprite[1].path);
+	printf("%s", tabSprite[0].path);
+	printf("\n\n\n");
+	printf("elem --> %s, width: %i", tabSprite[7].path, tabSprite[7].width);
 	//we copy the spriteGround inside the map
 	/*while(height < map.height)
 	{
@@ -29,6 +29,5 @@ int     main(void)
 	//pushing the image map in the window
 	//mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
 	//mlx_loop(window.mlxPtr);
-
 	return(0);
 }
