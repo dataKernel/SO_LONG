@@ -7,7 +7,7 @@
 t_win   create_window(int w, int h, char *title)
 {
     t_win   window;
-    
+
     window.width = w;
     window.height = h;
     window.title = title;
