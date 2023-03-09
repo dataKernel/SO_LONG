@@ -28,6 +28,7 @@ typedef struct  s_img
     void    *imgPtr;
     void    *addr;
 
+    char    *path;
     int     lineLength;
     int     endian;
     int     bpp;
@@ -40,6 +41,6 @@ t_win   create_window(int w, int h, char *title);
 t_img   create_image(int w, int h, void *mlxPtr);
 t_img   create_sprite(char *path, void *mlxPtr);
 
-void    load_sprite(void *mlxPtr);
+t_img   *load_sprite(void *mlxPtr);
 
 #endif

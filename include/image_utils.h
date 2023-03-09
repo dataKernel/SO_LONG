@@ -4,5 +4,6 @@
 unsigned int 	ft_pixel_get(t_img image, int x, int y);
 void            ft_pixel_put(t_img image, int x, int y, int color);
 void            copy_sprite_in_image(t_img sprite, t_img image, int x, int y);
+void	        *ft_memcpy(void *dst, const void *src, size_t n);
 
 #endif
