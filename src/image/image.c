@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "../../include/image.h"
 #include "../../include/image_utils.h"
 
@@ -37,8 +39,35 @@ t_img   create_sprite(char *path, void *mlxPtr)
     return(sprite);
 }
 
-void    load_sprite()
+void    load_path_sprite(char **arraySpritePath)
 {
-    char    path[10];
+    arraySpritePath[0] = SPRITE_1;
+    arraySpritePath[1] = SPRITE_2;
+    arraySpritePath[2] = SPRITE_3;
+    arraySpritePath[3] = SPRITE_4;
+    arraySpritePath[4] = SPRITE_5;
+    arraySpritePath[5] = SPRITE_6;
+    arraySpritePath[6] = SPRITE_7;
+    arraySpritePath[7] = SPRITE_8;
+    arraySpritePath[8] = SPRITE_9;
+}
+
+void    load_sprite(void *mlxPtr)
+{
+    t_img   sprite[9];
+    t_img   *ptr;
+    char    *spritePath[9];
+    int     i;
+
+    i = 0;
+    load_path_sprite(spritePath);
+    while(i < 9)
+    {
+        sprite[i] = create_sprite(spritePath[i], mlxPtr);
+        i++;
+    }
+
+    printf("elem char width : %i", sprite[1].width);
+    //ptr = (t_img *)malloc(sizeof(ptr) * 9);
 
 }

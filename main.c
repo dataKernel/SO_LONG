@@ -3,8 +3,6 @@
 #include "include/image_utils.h"
 
 
-
-
 int     main(void)
 {
 	t_win 	window;
@@ -16,7 +14,7 @@ int     main(void)
 	height = 0;
 	window = create_window(405, 490, "solong.exe");
 	map = create_image(window.width, window.height, window.mlxPtr);
-
+	load_sprite(window.mlxPtr);
 	//we copy the spriteGround inside the map
 	/*while(height < map.height)
 	{
@@ -29,8 +27,8 @@ int     main(void)
 		height += spriteGround1.height;
 	}*/
 	//pushing the image map in the window
-	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
-	mlx_loop(window.mlxPtr);
+	//mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
+	//mlx_loop(window.mlxPtr);
 
 	return(0);
 }
