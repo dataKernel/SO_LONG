@@ -9,7 +9,7 @@ int     main(void)
 
 	window = create_window(405, 490, "solong.exe");
 
-	printf(" pointer mlxPtr %p")
+	printf("pointer mlxPtr %p", window.mlxPtr);
 
 	//generate_map("assets/maps/map.ber");
 	//we copy the spriteGround inside the map
