@@ -6,15 +6,12 @@
 int     main(void)
 {
 	t_win 	window;
-	t_img 	map;
-	t_img 	*tabSprite;
 
 	window = create_window(405, 490, "solong.exe");
-	tabSprite = load_sprite(window.mlxPtr);
-	printf("%s", tabSprite[1].path);
-	printf("%s", tabSprite[0].path);
-	printf("\n\n\n");
-	printf("elem --> %s, width: %i", tabSprite[7].path, tabSprite[7].width);
+
+	printf(" pointer mlxPtr %p")
+
+	//generate_map("assets/maps/map.ber");
 	//we copy the spriteGround inside the map
 	/*while(height < map.height)
 	{

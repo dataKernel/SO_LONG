@@ -54,10 +54,7 @@ int		check_width_line(char *str)
 	return(width);
 }
 
-// int     get_index(int y, int x, int width)
-// {
-    //     int     index;
-    //
-    //     index = width * y + x;
-    //     return(index);
-    // }
+void    generate_map(char *map, void *mlxPtr)
+{
+
+}
