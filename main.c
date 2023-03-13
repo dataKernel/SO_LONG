@@ -15,10 +15,13 @@ int     main(void)
 
 
 	mapString = read_map("assets/maps/map.ber");
-	winWidth = check_width_line(mapString);
-	winHeight = check_height_column(mapString);
+	winWidth = check_width_line(mapString) * 40;
+	winHeight = (check_height_column(mapString) - 1) * 80 + 163;
 	window = create_window(winWidth, winHeight, "so_long.exe");
-	generate_map(mapString, window.mlxPtr);
+	map = generate_map(mapString, window);
+	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
+	mlx_loop(window.mlxPtr);
+
 	return(0);
 }
 
