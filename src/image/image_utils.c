@@ -36,15 +36,15 @@ void 			copy_sprite_in_image(t_img sprite, t_img image, int x, int y)
 
 void    load_path_sprite(char **arraySpritePath)
 {
-    arraySpritePath[0] = SPRITE_1;
-    arraySpritePath[1] = SPRITE_2;
-    arraySpritePath[2] = SPRITE_3;
-    arraySpritePath[3] = SPRITE_4;
-    arraySpritePath[4] = SPRITE_5;
-    arraySpritePath[5] = SPRITE_6;
-    arraySpritePath[6] = SPRITE_7;
-    arraySpritePath[7] = SPRITE_8;
-    arraySpritePath[8] = SPRITE_9;
+    arraySpritePath[0] = CHAR_1;
+    arraySpritePath[1] = GROUND_1;
+    arraySpritePath[2] = GROUND_2;
+    arraySpritePath[3] = WALL_TOP;
+    arraySpritePath[4] = WALL_TREE_1;
+	arraySpritePath[5] = WALL_TREE_2;
+    arraySpritePath[6] = WALL_TREE_3;
+    arraySpritePath[7] = WALL_TREE_4;
+    arraySpritePath[8] = WALL_TREE_5;
 }
 
 t_img   *load_sprite(void *mlxPtr)
