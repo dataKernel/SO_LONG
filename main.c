@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "include/map_checking_utils.h"
 #include "include/image.h"
 #include "include/image_utils.h"
 
@@ -9,7 +10,10 @@ int     main(void)
 
 	window = create_window(405, 490, "solong.exe");
 
-	printf("pointer mlxPtr %p", window.mlxPtr);
+	//checking the ptr related to win
+	printf("ptr mlx --> %p\n", window.mlxPtr);
+	//checking the width and height
+	printf("w:%i_____h:%i\n", window.width, window.height);
 
 	//generate_map("assets/maps/map.ber");
 	//we copy the spriteGround inside the map

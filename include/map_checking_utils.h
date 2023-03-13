@@ -13,7 +13,7 @@
 # define COLLECTIBLE 'C'
 # define EXIT 'E'
 
-bool check_position_libre(char *str, int position);
+bool    check_position_libre(char *str, int position);
 char    *read_map(char *path);
 int     get_index(int y, int x, int width);
 int		check_width_line(char *str);

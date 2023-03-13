@@ -1,4 +1,5 @@
 #include "../../include/map_checking_utils.h"
+#include "../../include/image_utils.h"
 
 char    *read_map(char *path)
 {
@@ -52,9 +53,4 @@ int		check_width_line(char *str)
 		width++;
 	}
 	return(width);
-}
-
-void    generate_map(char *map, void *mlxPtr)
-{
-
 }
