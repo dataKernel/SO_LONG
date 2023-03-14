@@ -1,6 +1,8 @@
 #ifndef MAP_H
 # define MAP_H
 
-generate_map(char *map, void *mlxPtr);
+#include "image.h"
+
+t_img    generate_map(char *pathMap, t_win window);
 
 #endif
