@@ -13,7 +13,6 @@ int     main(void)
 	int 	winWidth;
 	int 	winHeight;
 
-
 	mapString = read_map("assets/maps/map.ber");
 	winWidth = check_width_line(mapString) * 40;
 	winHeight = (check_height_column(mapString) - 1) * 80 + 163;
