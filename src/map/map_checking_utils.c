@@ -54,3 +54,19 @@ int		check_width_line(char *str)
 	}
 	return(width);
 }
+
+int     check_height_column(char *str)
+{
+    int     height;
+    int     i;
+
+    i = 0;
+    height = 0;
+    while(str[i])
+    {
+        if(str[i] == '\n')
+            height++;
+        i++;
+    }
+    return(height);
+}

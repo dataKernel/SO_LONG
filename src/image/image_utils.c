@@ -55,7 +55,7 @@ t_img   *load_sprite(void *mlxPtr)
     int     i;
 
     i = 0;
-    ptr = (t_img *)malloc(sizeof(ptr) * 9);
+    ptr = (t_img *)malloc(sizeof(t_img) * 9);
     load_path_sprite(spritePathTab);
     while(i < 9)
     {
