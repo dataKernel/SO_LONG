@@ -18,6 +18,8 @@ int     main(void)
 	winHeight = (check_height_column(mapString) - 1) * 40 + 163;
 	window = create_window(winWidth, winHeight, "so_long.exe");
 	map = generate_map(mapString, window);
+	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
+	mlx_loop(window.mlxPtr);
 
 	return(0);
 }

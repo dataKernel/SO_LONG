@@ -15,10 +15,7 @@ t_img    generate_map(char *pathMap, t_win window)
     mapString = read_map(pathMap);
     map = create_image(window.width, window.height, window.mlxPtr);
     spriteTabPtr = load_sprite(window.mlxPtr);
-    //test d'afficher le path d'un sprite
-    printf("path-->%s\n", spriteTabPtr[0].path);
-    printf("path-->%s\n", spriteTabPtr[1].path);
-    printf("path-->%s\n", spriteTabPtr[2].path);
-    printf("path-->%s\n", spriteTabPtr[3].path);
+    copy_sprite_in_image(map, spriteTabPtr[3], 0, 0);
+
     return(map);
 }
