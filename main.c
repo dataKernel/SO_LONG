@@ -20,6 +20,5 @@ int     main(void)
 	map = generate_map(mapString, window);
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
 	mlx_loop(window.mlxPtr);
-
 	return(0);
 }
