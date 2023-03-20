@@ -1,7 +1,7 @@
 ###VAR###
 NAME  	= 	so_long
 
-FLAGS 	=
+FLAGS 	=	-Wall -Wextra Werror
 CC		= 	gcc
 
 RM 		= 	rm -f
@@ -38,10 +38,14 @@ src/map/map.o: 	src/map/map.c \
 
 	$(CC) src/map/map.c -c -o src/map/map.o $(FLAGS)
 
-src/image/image.o : src/image/image.c include/*.h
+src/image/image.o:	src/image/image.c \
+					include/image_utils.h \
+					include/image.h
 	$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
 
-src/image/image_utils.o : src/image/image_utils.c include/*.h
+src/image/image_utils.o:	src/image/image_utils.c \
+							include/image_utils.h \
+							include/image.h
 	$(CC) src/image/image_utils.c -c -o src/image/image_utils.o $(FLAGS)
 
 main.o: main.c
