@@ -1,15 +1,27 @@
 #ifndef IMAGE_H
 # define IMAGE_H
 
-# define CHAR_1 "assets/sprites/character.xpm"
-# define GROUND_1 "assets/sprites/ground_1.xpm"
-# define GROUND_2 "assets/sprites/ground_2.xpm"
-# define WALL_TOP "assets/sprites/wall_top.xpm"
-# define WALL_TREE_1 "assets/sprites/wall_tree_1.xpm"
-# define WALL_TREE_2 "assets/sprites/wall_tree_2.xpm"
-# define WALL_TREE_3 "assets/sprites/wall_tree_3.xpm"
-# define WALL_TREE_4 "assets/sprites/wall_tree_4.xpm"
-# define WALL_TREE_5 "assets/sprites/wall_tree_5.xpm"
+# define CHAR_1 0
+# define GROUND_1 1
+# define GROUND_2 2
+# define WALL_TOP 3
+# define WALL_TREE_1 4
+# define WALL_TREE_2 5
+# define WALL_TREE_3 6
+# define WALL_TREE_4 7
+# define WALL_TREE_5 8
+# define RESSOURCE_1 9
+
+# define CHAR_1_PATH "assets/sprites/character.xpm"
+# define GROUND_1_PATH "assets/sprites/ground_1.xpm"
+# define GROUND_2_PATH "assets/sprites/ground_2.xpm"
+# define WALL_TOP_PATH "assets/sprites/wall_top.xpm"
+# define WALL_TREE_1_PATH "assets/sprites/wall_tree_1.xpm"
+# define WALL_TREE_2_PATH "assets/sprites/wall_tree_2.xpm"
+# define WALL_TREE_3_PATH "assets/sprites/wall_tree_3.xpm"
+# define WALL_TREE_4_PATH "assets/sprites/wall_tree_4.xpm"
+# define WALL_TREE_5_PATH "assets/sprites/wall_tree_5.xpm"
+# define RESSOURCE_1_PATH "assets/sprites/ressource.xpm"
 
 # include "../libx_opengl/mlx.h"
 
