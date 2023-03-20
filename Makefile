@@ -21,13 +21,21 @@ fclean:
 so_long: $(OBJS)
 	$(CC) $(OBJS) $(LIB) -o $(NAME)
 
-src/map/map_checking.o: src/map/map_checking.c include/*.h
+src/map/map_checking.o: src/map/map_checking.c \
+						include/map_checking.h \
+						include/map_checking.h
 	$(CC) src/map/map_checking.c -c -o src/map/map_checking.o $(FLAGS)
 
-src/map/map_checking_utils.o: src/map/map_checking_utils.c include/*.h
+src/map/map_checking_utils.o: 	src/map/map_checking_utils.c \
+								include/map_checking_utils.h \
+								include/image_utils.h
 	$(CC) src/map/map_checking_utils.c -c -o src/map/map_checking_utils.o $(FLAGS)
 
-src/map/map.o: src/map/map.c include/*.h
+src/map/map.o: 	src/map/map.c \
+				include/map_checking_utils.h \
+				include/image_utils.h \
+				include/map.h
+
 	$(CC) src/map/map.c -c -o src/map/map.o $(FLAGS)
 
 src/image/image.o : src/image/image.c include/*.h
