@@ -37,19 +37,16 @@ bool check_position_libre(char *str, int position)
   return false;
 }
 
-
 int		check_width_line(char *str)
 {
+    //jai change cette fonction pr la largeur de map
+    //mais pour les check de map j'ajoutais 1 quand je choppais \n
+    //et je ne sais pas trop pk donc pr les test faudra reverifier ca
 	int		width;
 
 	width = 0;
-	while(str[width])
+	while(str[width] != '\n')
 	{
-		if(str[width] == '\n')
-		{
-			width += 1;
-			break;
-		}
 		width++;
 	}
 	return(width);

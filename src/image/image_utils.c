@@ -8,7 +8,7 @@ unsigned int 	ft_pixel_get(t_img image, int x, int y)
 	return *(unsigned int *)dst;
 }
 
-void            ft_pixel_put(t_img image, int x, int y, int color)
+void 	ft_pixel_put(t_img image, int x, int y, int color)
 {
 	char 	*dst;
 
@@ -16,7 +16,7 @@ void            ft_pixel_put(t_img image, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-void 			copy_sprite_in_image(t_img sprite, t_img image, int x, int y)
+void 	copy_sprite_in_image(t_img sprite, t_img image, int x, int y)
 {
 	int 	line;
 	int 	pixel;
@@ -36,33 +36,33 @@ void 			copy_sprite_in_image(t_img sprite, t_img image, int x, int y)
 
 void    load_path_sprite(char **arraySpritePath)
 {
-    arraySpritePath[0] = CHAR_1;
-    arraySpritePath[1] = GROUND_1;
-    arraySpritePath[2] = GROUND_2;
-    arraySpritePath[3] = WALL_TOP;
-    arraySpritePath[4] = WALL_TREE_1;
-	arraySpritePath[5] = WALL_TREE_2;
-    arraySpritePath[6] = WALL_TREE_3;
-    arraySpritePath[7] = WALL_TREE_4;
-    arraySpritePath[8] = WALL_TREE_5;
+    arraySpritePath[0] = CHAR_1_PATH;
+    arraySpritePath[1] = GROUND_1_PATH;
+    arraySpritePath[2] = GROUND_2_PATH;
+    arraySpritePath[3] = WALL_TOP_PATH;
+    arraySpritePath[4] = WALL_TREE_1_PATH;
+	arraySpritePath[5] = WALL_TREE_2_PATH;
+    arraySpritePath[6] = WALL_TREE_3_PATH;
+    arraySpritePath[7] = WALL_TREE_4_PATH;
+    arraySpritePath[8] = WALL_TREE_5_PATH;
+	arraySpritePath[9] = RESSOURCE_1_PATH;
+	arraySpritePath[10] = EXIT_PATH;
 }
 
 t_img   *load_sprite(void *mlxPtr)
 {
-    t_img   spriteTab[9];
-    t_img   *ptr;
-    char    *spritePathTab[9];
+    t_img   *spriteTab;
+    char    *spritePathTab[11];
     int     i;
 
     i = 0;
-    ptr = (t_img *)malloc(sizeof(t_img) * 9);
+    spriteTab = (t_img *)malloc(sizeof(t_img) * 11);
     load_path_sprite(spritePathTab);
-    while(i < 9)
+    while(i < 11)
     {
         spriteTab[i] = create_sprite(spritePathTab[i], mlxPtr);
         spriteTab[i].path = spritePathTab[i];
-        ptr[i] = spriteTab[i];
         i++;
     }
-    return(ptr);
+    return(spriteTab);
 }

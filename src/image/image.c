@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "../../include/image.h"
 #include "../../include/image_utils.h"
+#include "../../include/image.h"
 
 
 t_win   create_window(int w, int h, char *title)
