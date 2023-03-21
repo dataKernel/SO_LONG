@@ -17,6 +17,8 @@ int     main(void)
 	int 	x;
 	int 	y;
 
+	//init seed
+	srand(time(NULL));
 	//map generation et windows size
 	mapString = read_map("assets/maps/map.ber");
 	winWidth = check_width_line(mapString) * 40;
