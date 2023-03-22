@@ -32,29 +32,37 @@ src/map/map_checking.o: src/map/map_checking.c \
 
 src/map/map_checking_utils.o: 	src/map/map_checking_utils.c \
 								include/map_checking_utils.h \
-								include/image_utils.h
+								include/image_utils.h \
+								include/image.h \
+								libx_opengl/mlx.h
 	$(CC) src/map/map_checking_utils.c -c -o src/map/map_checking_utils.o $(FLAGS)
 
 src/map/map.o: 	src/map/map.c \
 				include/map_checking_utils.h \
 				include/image_utils.h \
+				include/image.h \
+				libx_opengl/mlx.h \
 				include/map.h
 
 	$(CC) src/map/map.c -c -o src/map/map.o $(FLAGS)
 
 src/image/image.o:	src/image/image.c \
 					include/image_utils.h \
-					include/image.h
+					include/image.h \
+					libx_opengl/mlx.h
 	$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
 
 src/image/image_utils.o:	src/image/image_utils.c \
 							include/image_utils.h \
-							include/image.h
+							include/image.h \
+							libx_opengl/mlx.h
 	$(CC) src/image/image_utils.c -c -o src/image/image_utils.o $(FLAGS)
 
-src/image/character.o: 		src/image/character.c \
+src/image/character.o:		include/map_checking_utils.h \
+							src/image/character.c \
 							include/character.h \
-							include/image.h
+							include/image.h \
+							libx_opengl/mlx.h
 	$(CC) src/image/character.c -c -o src/image/character.o $(FLAGS)
 
 main.o: main.c
