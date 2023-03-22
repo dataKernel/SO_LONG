@@ -23,7 +23,7 @@ int     main(void)
 	winHeight = (check_height_column(mapString) - 1) * 40 + 82;
 	window = create_window(winWidth, winHeight, "so_long.exe");
 	map = generate_map(mapString, window);
-	character = load_character(window, mapsString);
+	character = load_character(window, mapString);
 	//push du perso
 	//push des elems dans la fenetre
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
