@@ -15,6 +15,8 @@ int     main(void)
 	int 	winHeight;
 	int 	winWidth;
 
+	int 	x;
+	int 	y;
 	//init seed
 	srand(time(NULL));
 	//map generation et windows size
@@ -24,10 +26,12 @@ int     main(void)
 	window = create_window(winWidth, winHeight, "so_long.exe");
 	map = generate_map(mapString, window);
 	character = load_character(window, mapString);
+	x = character.posiX * 40;
+	y = (character.posiY * 40) + 42;
 	//push du perso
 	//push des elems dans la fenetre
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
-
+	mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, x, y);
 	mlx_loop(window.mlxPtr);
 	return(0);
 }
