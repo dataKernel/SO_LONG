@@ -11,7 +11,8 @@
 # define WALL_TREE_4 7
 # define WALL_TREE_5 8
 # define RESSOURCE_1 9
-# define EXIT_1 10
+# define RESSOURCE_2 10
+# define EXIT_1 11
 
 
 # define CHAR_1_PATH "assets/sprites/character.xpm"
@@ -23,7 +24,8 @@
 # define WALL_TREE_3_PATH "assets/sprites/wall_tree_3.xpm"
 # define WALL_TREE_4_PATH "assets/sprites/wall_tree_4.xpm"
 # define WALL_TREE_5_PATH "assets/sprites/wall_tree_5.xpm"
-# define RESSOURCE_1_PATH "assets/sprites/ressource.xpm"
+# define RESSOURCE_1_PATH "assets/sprites/ressource_1.xpm"
+# define RESSOURCE_2_PATH "assets/sprites/ressource_2.xpm"
 # define EXIT_PATH "assets/sprites/exit.xpm"
 
 # include "../libx_opengl/mlx.h"
