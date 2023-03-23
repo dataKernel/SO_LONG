@@ -24,8 +24,8 @@ int     main(void)
 	winWidth = check_width_line(mapString) * 40;
 	winHeight = (check_height_column(mapString) - 1) * 40 + 82;
 	window = create_window(winWidth, winHeight, "so_long.exe");
-	map = generate_map(mapString, window);
-	character = load_character(window, mapString);
+	map = load_map(mapString, window);
+	character = load_character(window, mapString, CHAR_DOWN_1_PATH);
 	x = character.posiX * 40;
 	y = (character.posiY * 40) + 42;
 	//push du perso
