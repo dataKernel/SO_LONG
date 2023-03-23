@@ -1,26 +1,13 @@
-#include <stdio.h>
-
 #include "../../include/map_checking_utils.h"
 #include "../../include/image_utils.h"
 #include "../../include/map.h"
 
-//fonction pr generer le random sur les sprites
-//(...)
-
-int     get_position_character(char *mapString)
+int     rand_sprites(int min, int max)
 {
-    int     countBackSlash;
-    int     i;
+    int     random;
 
-    i = 0;
-    countBackSlash = 0;
-    while(mapString[i] != PLAYER)
-    {
-        if(mapString[i] == '\n')
-        countBackSlash++;
-        i++;
-    }
-    return(i - countBackSlash);
+    random = rand() % ((max + 1) - min) + min;
+    return(random);
 }
 
 void    generate_wall_top(t_img map, t_img *spriteTabPtr)
@@ -38,6 +25,7 @@ void    generate_wall_top(t_img map, t_img *spriteTabPtr)
 void    generate_map_content(char *mapString, t_img map, t_img *spriteTabPtr)
 {
     int     height;
+    int     randGround;
     int     line;
     int     i;
 
@@ -45,27 +33,30 @@ void    generate_map_content(char *mapString, t_img map, t_img *spriteTabPtr)
     height = spriteTabPtr[WALL_TOP].height;
     while(height < map.height)
     {
-    	line = 0;
-    	while(line < map.width)
-    	{
+        line = 0;
+        while(line < map.width)
+        {
+            randGround = rand_sprites(0, 100);
             if(mapString[i] == SPACE || mapString[i] == PLAYER)
-    		    copy_sprite_in_image(spriteTabPtr[GROUND_1], map, line, height);
+            {
+                if(randGround < 90)
+                copy_sprite_in_image(spriteTabPtr[GROUND_1], map, line, height);
+                else
+                copy_sprite_in_image(spriteTabPtr[GROUND_2], map, line, height);
+            }
             else if(mapString[i] == WALL)
-                copy_sprite_in_image(spriteTabPtr[WALL_TREE_2], map, line, height);
-            else if(mapString[i] == COLLECTIBLE)
-                copy_sprite_in_image(spriteTabPtr[RESSOURCE_1], map, line, height);
+                copy_sprite_in_image(spriteTabPtr[rand_sprites(WALL_TREE_2, WALL_TREE_5)], map, line, height);
             else if(mapString[i] == EXIT)
                 copy_sprite_in_image(spriteTabPtr[EXIT_1], map, line, height);
             if(mapString[i] != '\n')
                 line += 40;
             i++;
         }
-    	height += 40;
+        height += 40;
     }
 }
 
-
-t_img    generate_map(char *mapString, t_win window)
+t_img    load_map(char *mapString, t_win window)
 {
     t_img   *spriteTabPtr;
     t_img   map;
