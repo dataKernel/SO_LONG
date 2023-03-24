@@ -9,12 +9,24 @@
 # define WALL_TREE_3 5
 # define WALL_TREE_4 6
 # define WALL_TREE_5 7
+
 # define RESSOURCE_HP 8
 # define RESSOURCE_MANA 9
 # define EXIT_1 10
+
 # define CHAR_DOWN_1 11
 # define CHAR_DOWN_2 12
 # define CHAR_DOWN_3 13
+
+# define CHAR_TOP_1 14
+# define CHAR_TOP_2 15
+# define CHAR_TOP_3 16
+# define CHAR_RIGHT_1 17
+# define CHAR_RIGHT_2 18
+# define CHAR_RIGHT_3 19
+# define CHAR_LEFT_1 20
+# define CHAR_LEFT_2 21
+# define CHAR_LEFT_3 22
 
 # define GROUND_1_PATH "assets/sprites/ground_1.xpm"
 # define GROUND_2_PATH "assets/sprites/ground_2.xpm"
@@ -24,13 +36,23 @@
 # define WALL_TREE_3_PATH "assets/sprites/wall_tree_3.xpm"
 # define WALL_TREE_4_PATH "assets/sprites/wall_tree_4.xpm"
 # define WALL_TREE_5_PATH "assets/sprites/wall_tree_5.xpm"
+
 # define RESSOURCE_1_PATH "assets/sprites/ressource_1.xpm"
 # define RESSOURCE_2_PATH "assets/sprites/ressource_2.xpm"
 # define EXIT_PATH "assets/sprites/exit.xpm"
+
 # define CHAR_DOWN_1_PATH "assets/sprites/character_down_1.xpm"
 # define CHAR_DOWN_2_PATH "assets/sprites/character_down_2.xpm"
 # define CHAR_DOWN_3_PATH "assets/sprites/character_down_3.xpm"
-
+# define CHAR_TOP_1_PATH "assets/sprites/character_top_1.xpm"
+# define CHAR_TOP_2_PATH "assets/sprites/character_top_2.xpm"
+# define CHAR_TOP_3_PATH "assets/sprites/character_top_3.xpm"
+# define CHAR_RIGHT_1_PATH "assets/sprites/character_right_1.xpm"
+# define CHAR_RIGHT_2_PATH "assets/sprites/character_right_2.xpm"
+# define CHAR_RIGHT_3_PATH "assets/sprites/character_right_3.xpm"
+# define CHAR_LEFT_1_PATH "assets/sprites/character_left_1.xpm"
+# define CHAR_LEFT_2_PATH "assets/sprites/character_left_2.xpm"
+# define CHAR_LEFT_3_PATH "assets/sprites/character_left_3.xpm"
 
 # include "../libx_opengl/mlx.h"
 
