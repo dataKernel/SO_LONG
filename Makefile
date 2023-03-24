@@ -7,9 +7,10 @@ CC		= 	gcc
 RM 		= 	rm -f
 
 OBJS 	=	src/map/map_checking_utils.o \
+			src/element/collectible.o \
 			src/image/image_utils.o \
+			src/element/character.o \
 			src/map/map_checking.o \
-			src/image/character.o \
 			src/image/image.o \
 			src/map/map.o \
 			main.o \
@@ -58,12 +59,19 @@ src/image/image_utils.o:	src/image/image_utils.c \
 							libx_opengl/mlx.h
 	$(CC) src/image/image_utils.c -c -o src/image/image_utils.o $(FLAGS)
 
-src/image/character.o:		include/map_checking_utils.h \
-							src/image/character.c \
+src/element/character.o:	src/element/character.c \
+							include/map_checking_utils.h \
 							include/character.h \
 							include/image.h \
 							libx_opengl/mlx.h
-	$(CC) src/image/character.c -c -o src/image/character.o $(FLAGS)
+	$(CC) src/element/character.c -c -o src/image/character.o $(FLAGS)
+
+src/element/collectible.o:	src/element/collectible.c \
+							include/map_checking_utils.h \
+							include/collectible.h \
+							include/image.h \
+							libx_opengl/mlx.h
+	$(CC) src/element/collectible.c -c -o src/element/collectible.o $(FLAGS)
 
 main.o: main.c
 	$(CC) main.c -c -o main.o $(FLAGS)
