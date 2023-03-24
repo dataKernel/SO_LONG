@@ -50,18 +50,27 @@ void    load_path_sprite(char **arraySpritePath)
 	arraySpritePath[11] = CHAR_DOWN_1_PATH;
 	arraySpritePath[12] = CHAR_DOWN_2_PATH;
 	arraySpritePath[13] = CHAR_DOWN_3_PATH;
+	arraySpritePath[14] = CHAR_TOP_1_PATH;
+	arraySpritePath[15] = CHAR_TOP_2_PATH;
+	arraySpritePath[16] = CHAR_TOP_3_PATH;
+	arraySpritePath[17] = CHAR_RIGHT_1_PATH;
+	arraySpritePath[18] = CHAR_RIGHT_2_PATH;
+	arraySpritePath[19] = CHAR_RIGHT_3_PATH;
+	arraySpritePath[20] = CHAR_DOWN_1_PATH;
+	arraySpritePath[21] = CHAR_DOWN_2_PATH;
+	arraySpritePath[22] = CHAR_DOWN_3_PATH;
 }
 
 t_img   *load_sprite(void *mlxPtr)
 {
     t_img   *spriteTab;
-    char    *spritePathTab[14];
+    char    *spritePathTab[23];
     int     i;
 
     i = 0;
-    spriteTab = (t_img *)malloc(sizeof(t_img) * 14);
+    spriteTab = (t_img *)malloc(sizeof(t_img) * 23);
     load_path_sprite(spritePathTab);
-    while(i < 14)
+    while(i < 23)
     {
         spriteTab[i] = create_sprite(spritePathTab[i], mlxPtr);
         spriteTab[i].path = spritePathTab[i];
