@@ -40,12 +40,14 @@ void    generate_map_content(char *mapString, t_img map, t_img *spriteTabPtr)
             if(mapString[i] == SPACE || mapString[i] == PLAYER)
             {
                 if(randGround < 90)
-                copy_sprite_in_image(spriteTabPtr[GROUND_1], map, line, height);
+                    copy_sprite_in_image(spriteTabPtr[GROUND_1], map, line, height);
                 else
-                copy_sprite_in_image(spriteTabPtr[GROUND_2], map, line, height);
+                    copy_sprite_in_image(spriteTabPtr[GROUND_2], map, line, height);
             }
             else if(mapString[i] == WALL)
                 copy_sprite_in_image(spriteTabPtr[rand_sprites(WALL_TREE_2, WALL_TREE_5)], map, line, height);
+            else if(mapString[i] == COLLECTIBLE)
+                copy_sprite_in_image(spriteTabPtr[rand_sprites(COLLECTIBLE_HP, COLLECTIBLE_MANA)], map, line, height);
             else if(mapString[i] == EXIT)
                 copy_sprite_in_image(spriteTabPtr[EXIT_1], map, line, height);
             if(mapString[i] != '\n')
