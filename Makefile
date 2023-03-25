@@ -11,6 +11,7 @@ OBJS 	=	src/map/map_checking_utils.o \
 			src/image/image_utils.o \
 			src/element/character.o \
 			src/map/map_checking.o \
+			src/events/events.o \
 			src/image/image.o \
 			src/map/map.o \
 			main.o \
@@ -72,6 +73,9 @@ src/element/collectible.o:	src/element/collectible.c \
 							include/image.h \
 							libx_opengl/mlx.h
 	$(CC) src/element/collectible.c -c -o src/element/collectible.o $(FLAGS)
+
+src/events/events.o :	src/events/events.c \
+						include/events.h
 
 main.o: main.c
 	$(CC) main.c -c -o main.o $(FLAGS)
