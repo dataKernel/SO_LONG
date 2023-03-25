@@ -10,8 +10,8 @@
 # define WALL_TREE_4 6
 # define WALL_TREE_5 7
 
-# define RESSOURCE_HP 8
-# define RESSOURCE_MANA 9
+# define COLLECTIBLE_HP 8
+# define COLLECTIBLE_MANA 9
 # define EXIT_1 10
 
 # define CHAR_DOWN_1 11
@@ -37,8 +37,8 @@
 # define WALL_TREE_4_PATH "assets/sprites/wall_tree_4.xpm"
 # define WALL_TREE_5_PATH "assets/sprites/wall_tree_5.xpm"
 
-# define RESSOURCE_1_PATH "assets/sprites/ressource_1.xpm"
-# define RESSOURCE_2_PATH "assets/sprites/ressource_2.xpm"
+# define COLLECTIBLE_HP_PATH "assets/sprites/ressource_1.xpm"
+# define COLLECTIBLE_MANA_PATH "assets/sprites/ressource_2.xpm"
 # define EXIT_PATH "assets/sprites/exit.xpm"
 
 # define CHAR_DOWN_1_PATH "assets/sprites/character_down_1.xpm"

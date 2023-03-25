@@ -10,7 +10,7 @@ typedef struct      s_collectible
     int     posiY;
 }t_collectible;
 
-t_img   load_collectible(t_win window, char* mapString);
-int     get_position_character(char *mapString);
+t_collectible   load_collectible(t_win window, char* mapString);
+int             get_position_collectible(char *mapString);
 
 #endif
