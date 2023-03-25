@@ -64,7 +64,7 @@ src/element/character.o:	src/element/character.c \
 							include/character.h \
 							include/image.h \
 							libx_opengl/mlx.h
-	$(CC) src/element/character.c -c -o src/image/character.o $(FLAGS)
+	$(CC) src/element/character.c -c -o src/element/character.o $(FLAGS)
 
 src/element/collectible.o:	src/element/collectible.c \
 							include/map_checking_utils.h \
