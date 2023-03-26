@@ -75,7 +75,9 @@ src/element/collectible.o:	src/element/collectible.c \
 	$(CC) src/element/collectible.c -c -o src/element/collectible.o $(FLAGS)
 
 src/events/events.o :	src/events/events.c \
-						include/events.h
+						include/events.h \
+						include/image.h
+	$(CC) src/events/events.c -c -o src/events/events.o $(FLAGS)
 
 main.o: main.c
 	$(CC) main.c -c -o main.o $(FLAGS)
