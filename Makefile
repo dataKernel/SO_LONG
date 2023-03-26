@@ -76,7 +76,8 @@ src/element/collectible.o:	src/element/collectible.c \
 
 src/events/events.o :	src/events/events.c \
 						include/events.h \
-						include/image.h
+						include/image.h \
+						libx_opengl/mlx.h
 	$(CC) src/events/events.c -c -o src/events/events.o $(FLAGS)
 
 main.o: main.c
