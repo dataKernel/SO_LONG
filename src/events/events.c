@@ -11,7 +11,7 @@ int     moove_char(int keycode, t_events *events)
 
     mlx = events->window.mlxPtr;
     win = events->window.winPtr;
-    if(keycode == TOP)
+    if(keycode == TOP && events->mapString[(events->character.posiY - 1) + events->character.posiX])
         events->character.posiY--;
     else if(keycode == DOWN)
         events->character.posiY++;
