@@ -9,6 +9,7 @@
 # define RIGHT 124
 # define LEFT 123
 
+
 typedef struct      s_events
 {
     t_char  character;
