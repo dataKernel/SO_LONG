@@ -36,11 +36,13 @@ int     main(void)
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, xChar, yChar);
 	//init des events
+	events.map = map;
 	events.mapString = mapString;
 	events.window = window;
 	events.character = character;
-	events.map = map;
+
 	mlx_hook(window.winPtr, 2, 0, moove_char, &events);
 	mlx_loop(window.mlxPtr);
+
 	return(0);
 }

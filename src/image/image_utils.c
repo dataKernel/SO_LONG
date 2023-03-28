@@ -73,7 +73,6 @@ t_img   *load_sprite(void *mlxPtr)
     while(i < 23)
     {
         spriteTab[i] = create_sprite(spritePathTab[i], mlxPtr);
-        spriteTab[i].path = spritePathTab[i];
         i++;
     }
     return(spriteTab);

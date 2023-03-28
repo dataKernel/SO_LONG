@@ -27,7 +27,7 @@ char    *read_map(char *path)
     return(map);
 }
 
-bool check_position_libre(char *str, int position)
+bool    check_position_libre(char *str, int position)
 {
   if (str[position] == SPACE || str[position] == COLLECTIBLE)
   {
@@ -63,4 +63,12 @@ int     check_height_column(char *str)
         i++;
     }
     return(height);
+}
+
+int   check_index_from_matrix(int x, int y, char *mapString)
+{
+    int     result;
+
+    result = ((y * check_width_line(mapString)) + x);
+    return(result);
 }
