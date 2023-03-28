@@ -75,6 +75,7 @@ src/element/collectible.o:	src/element/collectible.c \
 	$(CC) src/element/collectible.c -c -o src/element/collectible.o $(FLAGS)
 
 src/events/events.o :	src/events/events.c \
+						include/map_checking_utils.h \
 						include/events.h \
 						include/image.h \
 						libx_opengl/mlx.h
