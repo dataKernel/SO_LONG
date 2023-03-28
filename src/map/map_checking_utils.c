@@ -22,7 +22,7 @@ char    *read_map(char *path)
     map = malloc(sizeof(char) * (totalMapSize + 2));
     read(fd, map, totalMapSize);
     close(fd);
-    map[totalMapSize +1] = '\0';
+    map[totalMapSize + 1] = '\0';
     map[totalMapSize] = '\n';
     return(map);
 }

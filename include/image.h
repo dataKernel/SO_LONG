@@ -82,5 +82,6 @@ typedef struct  s_img
 t_win   create_window(int w, int h, char *title);
 t_img   create_image(int w, int h, void *mlxPtr);
 t_img   create_sprite(char *path, void *mlxPtr);
+char    *rm_backslash_mapstring(char *map);
 
 #endif

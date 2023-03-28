@@ -7,10 +7,13 @@ int     moove_char(int keycode, t_events *events)
 {
     void    *mlx;
     void    *win;
+    char    *map;
     int     posi;
     int     x;
     int     y;
-    //posi = check_index_from_matrix(events->character.posiX, events->character.posiY, map);
+    //posi = check_index_from_matrix(events->character.posiX, events->character.posiY, events->mapString);
+    //printf("posi: %c\n", events->mapString[posi]);
+
     mlx = events->window.mlxPtr;
     win = events->window.winPtr;
     if(keycode == TOP)
