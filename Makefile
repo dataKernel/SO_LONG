@@ -1,4 +1,4 @@
-###VAR###
+###VARS###
 NAME  	= 	so_long
 
 FLAGS 	=

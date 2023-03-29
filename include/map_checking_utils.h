@@ -17,6 +17,6 @@ bool    check_position_libre(char *str, int position);
 char    *read_map(char *path);
 int		check_width_line(char *str);
 int     check_height_column(char *str);
-int     check_index_from_matrix(int x, int y, char *mapString);
+int     check_index_from_matrix(int x, int y, int widthLine);
 
 #endif

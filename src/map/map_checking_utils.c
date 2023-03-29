@@ -65,10 +65,10 @@ int     check_height_column(char *str)
     return(height);
 }
 
-int   check_index_from_matrix(int x, int y, char *mapString)
+int   check_index_from_matrix(int x, int y, int widthLine)
 {
     int     result;
 
-    result = ((y * check_width_line(mapString)) + x);
+    result = (y * widthLine) + x;
     return(result);
 }

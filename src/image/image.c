@@ -39,9 +39,8 @@ t_img   create_sprite(char *path, void *mlxPtr)
     return(sprite);
 }
 
-char    *rm_backslash_mapstring(char *map)
+void    rm_backslash_mapstring(char *map, char **dst)
 {
-    char    *dst;
     int     sizeMap;
     int     slash;
     int     i;
@@ -56,20 +55,18 @@ char    *rm_backslash_mapstring(char *map)
         i++;
     }
     sizeMap = (i - slash);
-    dst = (char *)malloc(sizeof(char) * (sizeMap + 1));
-    if(dst == NULL)
+    *dst = (char *)malloc(sizeof(char) * (sizeMap + 1));
+    if(*dst == NULL)
         printf("ERROR_MALLOC\n");
     i = 0;
     j = 0;
     while(map[i])
     {
-        printf("%c\n", dst[j]);
-        if(map[i] != '\n')
-        {
-            dst[j] = map[i];
-            j++;
-        }
+        (*dst)[j] = map[i];
         i++;
+        j++;
+        if(map[i] == '\n')
+            i++;
     }
-    return(dst);
+    (*dst)[j] = '\0';
 }
