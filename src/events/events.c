@@ -1,5 +1,5 @@
 #include "../../include/events.h"
-#include "../../include/image.h"
+#include "../../include/map_utils.h"
 #include "../../include/map_checking_utils.h"
 #include <stdio.h>
 
