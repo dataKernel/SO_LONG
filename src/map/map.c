@@ -39,7 +39,7 @@ void    generate_map_content(char *mapString, t_img map, t_img *spriteTabPtr)
             randGround = rand_sprites(0, 100);
             if(mapString[i] == SPACE || mapString[i] == PLAYER)
             {
-                if(randGround < 90)
+                if(randGround < 80)
                     copy_sprite_in_image(spriteTabPtr[GROUND_1], map, line, height);
                 else
                     copy_sprite_in_image(spriteTabPtr[GROUND_2], map, line, height);

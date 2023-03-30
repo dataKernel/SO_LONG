@@ -81,7 +81,8 @@ src/events/events.o:		src/events/events.c \
 							libx_opengl/mlx.h
 							$(CC) src/events/events.c -c -o src/events/events.o $(FLAGS)
 
-src/map/map_utils.o: 		src/map/map_utils.o \
+src/map/map_utils.o: 		src/map/map_utils.c \
+							include/map_checking_utils.h \
 							include/map_utils.h \
 							libx_opengl/mlx.h
 							$(CC) src/map/map_utils.c -c -o src/map/map_utils.o $(FLAGS)

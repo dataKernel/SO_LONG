@@ -1,8 +1,20 @@
+#include "../../include/map_checking_utils.h"
 #include "../../include/map_utils.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-int     check_map_size(char *map)
+char    *rm_player_mapstring(char *map)
 {
-    return(0);
+    int     i;
+
+    i = 0;
+    while(map[i])
+    {
+        if(map[i] == PLAYER)
+            map[i] = SPACE;
+        i++;
+    }
+    return(map);
 }
 
 void    rm_backslash_mapstring(char *map, char **dst)
@@ -20,6 +32,7 @@ void    rm_backslash_mapstring(char *map, char **dst)
             slash++;
         i++;
     }
+    map = rm_player_mapstring(map);
     sizeMap = (i - slash);
     *dst = (char *)malloc(sizeof(char) * (sizeMap + 1));
     if(*dst == NULL)
