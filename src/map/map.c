@@ -36,6 +36,7 @@ void    generate_map_content(char *mapString, t_img map, t_img *spriteTabPtr)
         line = 0;
         while(line < map.width)
         {
+            //ok
             randGround = rand_sprites(0, 100);
             if(mapString[i] == SPACE || mapString[i] == PLAYER)
             {
