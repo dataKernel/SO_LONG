@@ -17,6 +17,7 @@ char    *read_map(char *path)
         totalMapSize++;
         size = read(fd, &tmp, 1);
     }
+    totalMapSize++;
     close(fd);
     fd = open(path, O_RDONLY);
     map = malloc(sizeof(char) * (totalMapSize + 2));
