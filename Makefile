@@ -1,10 +1,8 @@
 ###VARS###
 NAME  	= 	so_long
 
-FLAGS 	= 	-Wall -Wextra -Werror
+FLAGS 	=	 
 CC		= 	gcc
-
-RM 		= 	rm -f
 
 OBJS 	=	src/map/map_checking_utils.o \
 			src/element/collectible.o \
@@ -23,7 +21,7 @@ LIB		= 	-L libx_opengl -lmlx -framework OpenGL -framework AppKit -lz
 all: $(NAME)
 
 fclean:
-	rm -rf *.o
+	rm -Rf *.o
 
 so_long: $(OBJS)
 	$(CC) $(OBJS) $(LIB) -o $(NAME)
