@@ -39,13 +39,13 @@ void    generate_map_content(char *mapString, t_img map, t_img *spriteTabPtr)
             randGround = rand_sprites(0, 100);
             if(mapString[i] == SPACE || mapString[i] == PLAYER)
             {
-                if(randGround < 80)
+                if(randGround < 75)
                     copy_sprite_in_image(spriteTabPtr[GROUND_1], map, line, height);
                 else
                     copy_sprite_in_image(spriteTabPtr[GROUND_2], map, line, height);
             }
             else if(mapString[i] == WALL)
-                copy_sprite_in_image(spriteTabPtr[rand_sprites(WALL_TREE_2, WALL_TREE_5)], map, line, height);
+                copy_sprite_in_image(spriteTabPtr[rand_sprites(WALL_TREE_1, WALL_TREE_5)], map, line, height);
             else if(mapString[i] == EXIT)
                 copy_sprite_in_image(spriteTabPtr[EXIT_1], map, line, height);
             if(mapString[i] != '\n')
@@ -66,6 +66,5 @@ t_img    load_map(char *mapString, t_win window)
     generate_wall_top(map, spriteTabPtr);
     generate_map_content(mapString, map, spriteTabPtr);
     free(spriteTabPtr);
-
     return(map);
 }

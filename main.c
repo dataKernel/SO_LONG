@@ -10,7 +10,6 @@
 
 int     main(void)
 {
-	t_events 		events;
 	t_char 			character;
 	t_win 			window;
 	t_img 			map;
@@ -20,7 +19,6 @@ int     main(void)
 
 	int 	xChar;
 	int 	yChar;
-
 	//init seed
 	srand(time(NULL));
 	//map generation et windows size
@@ -35,12 +33,6 @@ int     main(void)
 	//push des elems dans la fenetre
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, xChar, yChar);
-	//init des events
-	events.mapString = mapString;
-	events.map = map;
-	events.window = window;
-	events.character = character;
-	mlx_hook(window.winPtr, 2, 0, hook_character, &events);
 	mlx_loop(window.mlxPtr);
 
 	return(0);

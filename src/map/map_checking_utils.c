@@ -17,7 +17,7 @@ char    *read_map(char *path)
         totalMapSize++;
         size = read(fd, &tmp, 1);
     }
-    totalMapSize++;
+    totalMapSize--;
     close(fd);
     fd = open(path, O_RDONLY);
     map = malloc(sizeof(char) * (totalMapSize + 2));
@@ -30,12 +30,12 @@ char    *read_map(char *path)
 
 bool    check_position_libre(char *str, int position)
 {
-  if (str[position] == SPACE || str[position] == COLLECTIBLE)
-  {
-    str[position] = PLAYER;
-    return true;
-  }
-  return false;
+    if (str[position] == SPACE || str[position] == COLLECTIBLE)
+    {
+        str[position] = PLAYER;
+        return true;
+    }
+    return false;
 }
 
 int		check_width_line(char *str)
