@@ -33,6 +33,7 @@ t_img   create_sprite(char *path, void *mlxPtr)
 {
     t_img   sprite;
 
+    sprite.path = path;
     sprite.imgPtr = mlx_xpm_file_to_image(mlxPtr, path, &sprite.width, &sprite.height);
     sprite.addr = mlx_get_data_addr(sprite.imgPtr, &sprite.bpp, &sprite.lineLength, &sprite.endian);
 

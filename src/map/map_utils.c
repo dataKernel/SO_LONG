@@ -17,6 +17,7 @@ char    *rm_player_mapstring(char *map)
     return(map);
 }
 
+//faire un dessin pr se representer la memoire qui est update ici
 void    rm_backslash_mapstring(char *map, char **dst)
 {
     int     sizeMap;
@@ -35,8 +36,6 @@ void    rm_backslash_mapstring(char *map, char **dst)
     map = rm_player_mapstring(map);
     sizeMap = (i - slash);
     *dst = (char *)malloc(sizeof(char) * (sizeMap + 1));
-    if(*dst == NULL)
-        printf("ERROR_MALLOC\n"); //comment return code erreur apres malloc sur une func de type void
     i = 0;
     j = 0;
     while(map[i])
