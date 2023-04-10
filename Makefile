@@ -1,13 +1,13 @@
 ###VARS###
 NAME  	= 	so_long
 
-FLAGS 	=	 
+FLAGS 	=
 CC		= 	gcc
 
 OBJS 	=	src/map/map_checking_utils.o \
 			src/element/collectible.o \
-			src/image/image_utils.o \
 			src/element/character.o \
+			src/image/image_utils.o \
 			src/map/map_checking.o \
 			src/events/events.o \
 			src/map/map_utils.o\
@@ -21,7 +21,7 @@ LIB		= 	-L libx_opengl -lmlx -framework OpenGL -framework AppKit -lz
 all: $(NAME)
 
 fclean:
-	rm -Rf *.o
+	find . -type f -name '*.o' -delete
 
 so_long: $(OBJS)
 	$(CC) $(OBJS) $(LIB) -o $(NAME)
@@ -38,19 +38,20 @@ src/map/map_checking_utils.o: 	src/map/map_checking_utils.c \
 								libx_opengl/mlx.h
 								$(CC) src/map/map_checking_utils.c -c -o src/map/map_checking_utils.o $(FLAGS)
 
-src/map/map.o: 	src/map/map.c \
-				include/map_checking_utils.h \
-				include/image_utils.h \
-				include/image.h \
-				libx_opengl/mlx.h \
-				include/map.h
-				$(CC) src/map/map.c -c -o src/map/map.o $(FLAGS)
+src/map/map.o: 				src/map/map.c \
+							include/map_checking_utils.h \
+							include/image_utils.h \
+							include/map_utils.h \
+							include/image.h \
+							include/map.h \
+							libx_opengl/mlx.h
+							$(CC) src/map/map.c -c -o src/map/map.o $(FLAGS)
 
-src/image/image.o:	src/image/image.c \
-					include/image_utils.h \
-					include/image.h \
-					libx_opengl/mlx.h
-					$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
+src/image/image.o:			src/image/image.c \
+							include/image_utils.h \
+							include/image.h \
+							libx_opengl/mlx.h
+							$(CC) src/image/image.c -c -o src/image/image.o $(FLAGS)
 
 src/image/image_utils.o:	src/image/image_utils.c \
 							include/image_utils.h \
