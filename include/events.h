@@ -1,6 +1,7 @@
 #ifndef EVENTS_H
 # define EVENTS_H
 
+#include "map.h"
 # include "image.h"
 # include "character.h"
 
@@ -13,8 +14,8 @@ typedef struct      s_events
 {
     t_char  character;
     t_win   window;
-    t_img   map;
-    char    *mapString;
+    t_img   mapImg;
+    t_map   map;
 }t_events;
 
 void    move_char(t_char *character, char *map, int widthLine, int keycode, void *mlx);

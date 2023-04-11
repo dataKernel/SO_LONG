@@ -3,6 +3,7 @@
 #include "../../include/map_checking_utils.h"
 #include <stdio.h>
 
+/*
 int     hook_character(int keycode, t_events *events)
 {
     void    *mlx;
@@ -12,11 +13,6 @@ int     hook_character(int keycode, t_events *events)
     int     x;
     int     y;
 
-    mlx = events->window.mlxPtr;
-    win = events->window.winPtr;
-    map = NULL;
-    widthLine = check_width_line(events->mapString);
-    rm_backslash_mapstring(events->mapString, &map);
     move_char(&(events->character), map, widthLine, keycode, mlx);
     x = events->character.posiX * 40;
     y = events->character.posiY * 40 + 42;
@@ -25,7 +21,9 @@ int     hook_character(int keycode, t_events *events)
     free(map);
     return(0);
 }
+*/
 
+/*
 void    move_char(t_char *character, char *map, int widthLine, int keycode, void *mlx)
 {
     int     posi;
@@ -52,9 +50,10 @@ void    move_char(t_char *character, char *map, int widthLine, int keycode, void
         character->posiX--;
     }
 }
+*/
 
-/*int     check_key(int keycode)
+int     check_key(int keycode)
 {
     printf("touche pressée --> %i\n", keycode);
     return(0);
-}*/
+}
