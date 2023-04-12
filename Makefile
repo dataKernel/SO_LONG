@@ -48,6 +48,12 @@ src/map/map.o: 					src/map/map.c \
 								libx_opengl/mlx.h
 								$(CC) src/map/map.c -c -o src/map/map.o $(FLAGS)
 
+src/map/map_utils.o: 			src/map/map_utils.c \
+								include/map_checking_utils.h \
+								include/map_utils.h \
+								libx_opengl/mlx.h
+								$(CC) src/map/map_utils.c -c -o src/map/map_utils.o $(FLAGS)
+
 src/image/image.o:				src/image/image.c \
 								include/image_utils.h \
 								include/image.h \
@@ -77,16 +83,21 @@ src/element/collectible.o:		src/element/collectible.c \
 
 src/events/events.o:			src/events/events.c \
 								include/map_checking_utils.h \
+								include/character.h \
 								include/events.h \
 								include/image.h \
+								include/map.h \
 								libx_opengl/mlx.h
 								$(CC) src/events/events.c -c -o src/events/events.o $(FLAGS)
 
-src/map/map_utils.o: 			src/map/map_utils.c \
-								include/map_checking_utils.h \
-								include/map_utils.h \
+src/events/events_utils.o: 		src/events/events_utils.c \
+								include/events_utils.h \
+								include/character.h \
+								include/events.h \
+								include/image.h \
+								include/map.h \
 								libx_opengl/mlx.h
-								$(CC) src/map/map_utils.c -c -o src/map/map_utils.o $(FLAGS)
+								$(CC) src/events/events_utils.c -c -o src/events/events_utils.o $(FLAGS)
 
 main.o: main.c
 	$(CC) main.c -c -o main.o $(FLAGS)
