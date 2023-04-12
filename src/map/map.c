@@ -10,7 +10,7 @@ t_map    generate_matrix_map(char *mapString)
     map.width = check_width_line(mapString);
     map.height = check_height_column(mapString);
     rm_backslash_mapstring(mapString, &(map.content));
-
+    
     return(map);
 }
 
