@@ -18,7 +18,8 @@ typedef struct      s_events
     t_map   map;
 }t_events;
 
-void    move_char(t_char *character, char *map, int widthLine, int keycode, void *mlx);
+void    move_char_position_top(char *map, t_char *character, int position);
+void    move_char(int direction, t_events *events);
 int     hook_character(int keycode, t_events *events);
 int     check_key(int keycode);
 
