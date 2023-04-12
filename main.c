@@ -35,8 +35,13 @@ int     main(void)
 	//push des elems dans la fenetre
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, posCharX, posCharY);
 	map = generate_matrix_map(mapString);
-	
-	mlx_key_hook(window.winPtr, check_key, &events);
+	//set events
+	events.character = character;
+	events.window = window;
+	events.mapImg = mapImg;
+	events.map = map;
+	//push hook
+	mlx_key_hook(window.winPtr, hook_character, &events);
 	mlx_loop(window.mlxPtr);
 	return(0);
 }
