@@ -1,6 +1,5 @@
 #include "../../include/map_checking_utils.h"
 #include "../../include/events_utils.h"
-#include "../../include/map_utils.h"
 #include "../../include/events.h"
 #include <stdio.h>
 

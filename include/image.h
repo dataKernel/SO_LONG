@@ -21,7 +21,7 @@
 # define CHAR_TOP_1 14
 # define CHAR_TOP_2 15
 # define CHAR_TOP_3 16
-# define CHAR_RIGHT_1 17
+# define CHAR_RI GHT_1 17
 # define CHAR_RIGHT_2 18
 # define CHAR_RIGHT_3 19
 # define CHAR_LEFT_1 20
