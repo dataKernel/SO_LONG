@@ -1,4 +1,3 @@
-#include "../../include/image.h"
 #include "../../include/character.h"
 #include "../../include/map_checking_utils.h"
 

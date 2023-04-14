@@ -51,7 +51,7 @@ void    move_char_position_right(t_events *events)
     y = events->character.posiY;
     position = check_index_from_matrix(x, y, w);
     events->character.sprite = create_sprite(CHAR_RIGHT_1_PATH, events->window.mlxPtr);
-    if(map[position + 1] == SPACE)
+    if(map[position + 1] == SPACE || map[position + 1] == COLLECTIBLE)
         events->character.posiX++;
 }
 
@@ -69,6 +69,6 @@ void    move_char_position_left(t_events *events)
     y = events->character.posiY;
     position = check_index_from_matrix(x, y, w);
     events->character.sprite = create_sprite(CHAR_LEFT_1_PATH, events->window.mlxPtr);
-    if(map[position - 1] == SPACE)
+    if(map[position - 1] == SPACE || map[position - 1] == COLLECTIBLE)
         events->character.posiX--;
 }

@@ -44,9 +44,7 @@ int		check_width_line(char *str)
 
 	width = 0;
 	while(str[width] != '\n')
-	{
 		width++;
-	}
 	return(width);
 }
 

@@ -27,9 +27,10 @@ int     main(void)
 	winHeight = check_height_column(mapString) * 40 + 42;
 	window = create_window(winWidth, winHeight, "so_long.exe");
 	mapImg = load_map(mapString, window);
-	character = load_character(window, mapString, "assets/sprites/character_down_1.xpm");
+	character = load_character(window , mapString, CHAR_DOWN_1_PATH);
 	map = generate_matrix_map(mapString);
-	//push des elems dans la fenetre
+	collectible = load_collectible(window, map, COLLECTIBLE_HP_PATH, 0);
+	//debug checking collectible posi
 	//set events
 	events.character = character;
 	events.window = window;
