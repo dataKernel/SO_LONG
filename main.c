@@ -35,6 +35,7 @@ int     main(void)
 	//push des elems dans la fenetre
 	mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, posCharX, posCharY);
 	map = generate_matrix_map(mapString);
+	printf("map.content\n %s\n", map.content);
 	//set events
 	events.character = character;
 	events.window = window;
