@@ -18,8 +18,6 @@ int     main(void)
 	char 			*mapString;
 	int 			winWidth;
 	int 			winHeight;
-	int 			posCharX;
-	int 			posCharY;
 	//init seed
 	srand(time(NULL));
 	//map generation et windows size
@@ -27,14 +25,11 @@ int     main(void)
 	winWidth = check_width_line(mapString) * 40;
 	winHeight = check_height_column(mapString) * 40 + 42;
 	window = create_window(winWidth, winHeight, "so_long.exe");
-
 	mapImg = load_map(mapString, window);
 	character = load_character(window, mapString, "assets/sprites/character_down_1.xpm");
-	posCharX = character.posiX * 40;
-	posCharY = character.posiY * 40 + 42;
-	//push des elems dans la fenetre
-	mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, posCharX, posCharY);
+	
 	map = generate_matrix_map(mapString);
+	//push des elems dans la fenetre
 	//set events
 	events.character = character;
 	events.window = window;
