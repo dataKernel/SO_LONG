@@ -12,6 +12,7 @@ int     main(void)
 {
 	t_events 		events;
 	t_char 			character;
+	t_coll 			collectible;
 	t_win 			window;
 	t_img 			mapImg;
 	t_map 			map;
@@ -27,7 +28,6 @@ int     main(void)
 	window = create_window(winWidth, winHeight, "so_long.exe");
 	mapImg = load_map(mapString, window);
 	character = load_character(window, mapString, "assets/sprites/character_down_1.xpm");
-	
 	map = generate_matrix_map(mapString);
 	//push des elems dans la fenetre
 	//set events
