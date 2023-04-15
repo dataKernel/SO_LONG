@@ -18,7 +18,6 @@ int     hook_character(int keycode, t_events *events)
     position = check_index_from_matrix(events->character.posiX, events->character.posiY, events->map.width);
     if(events->map.content[position] == COLLECTIBLE)
         events->map.content[position] = SPACE;
-    printf("posi--> %c\n", events->map.content[position]);
     x = events->character.posiX * 40;
     y = events->character.posiY * 40 + 42;
     mlx_put_image_to_window(mlx, win, events->mapImg.imgPtr, 0, 0);
