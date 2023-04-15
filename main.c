@@ -29,7 +29,7 @@ int     main(void)
 	mapImg = load_map(mapString, window);
 	character = load_character(window , mapString, CHAR_DOWN_1_PATH);
 	map = generate_matrix_map(mapString);
-	collectible = load_collectible(window, map, COLLECTIBLE_HP_PATH, 0);
+	load_collectible_on_map(window, map, COLLECTIBLE_HP_PATH);
 	//debug checking collectible posi
 	//set events
 	events.character = character;

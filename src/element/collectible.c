@@ -1,7 +1,20 @@
 #include "../../include/collectible.h"
 #include "../../include/map_checking_utils.h"
 
-t_coll  load_collectible(t_win window, t_map map, char *spritePath, int index)
+void    load_collectible_on_map(t_win window, t_map map, char *spritePath)
+{
+    int     index;
+    
+    index = 0;
+    while(map.content[index])
+    {
+        if(map.content[index] == COLLECTIBLE)
+            load_collectible(window, map, spritePath, index);
+        index++;
+    }
+}
+
+void    load_collectible(t_win window, t_map map, char *spritePath, int index)
 {
     t_coll      collectible;
     int         x;
@@ -11,9 +24,8 @@ t_coll  load_collectible(t_win window, t_map map, char *spritePath, int index)
     collectible.posiX = get_position_collectible(map, index) % map.width;
     collectible.posiY = get_position_collectible(map, index) / map.width;
     x = collectible.posiX * 40;
-    y = collectible.posiY * 40;
+    y = collectible.posiY * 40 + 42;
     mlx_put_image_to_window(window.mlxPtr, window.winPtr, collectible.sprite.imgPtr, x, y);
-    return(collectible);
 }
 
 int     get_position_collectible(t_map map, int index)
