@@ -83,6 +83,7 @@ src/element/collectible.o:		src/element/collectible.c \
 
 src/events/events.o:			src/events/events.c \
 								include/map_checking_utils.h \
+								include/events_utils.h \
 								include/collectible.h \
 								include/character.h \
 								include/events.h \

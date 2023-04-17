@@ -1,15 +1,17 @@
 #include "../../include/collectible.h"
 #include "../../include/map_checking_utils.h"
 
-void    load_collectible_on_map(t_win window, t_map map, char *spritePath)
+void    load_collectible_on_map(t_win window, t_map map)
 {
     int     index;
     
     index = 0;
     while(map.content[index])
     {
-        if(map.content[index] == COLLECTIBLE)
-            load_collectible(window, map, spritePath, index);
+        if(map.content[index] == 'H')
+            load_collectible(window, map, COLLECTIBLE_HP_PATH, index);
+        else if(map.content[index] == 'M')
+            load_collectible(window, map, COLLECTIBLE_MANA_PATH, index);
         index++;
     }
 }
@@ -32,7 +34,7 @@ int     get_position_collectible(t_map map, int index)
 {    
     while(map.content[index])
     {
-        if(map.content[index] == COLLECTIBLE)
+        if(map.content[index] == 'H' || map.content[index] == 'M')
             return(index);
         index++;
     }

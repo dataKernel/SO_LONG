@@ -18,12 +18,12 @@ int     hook_character(int keycode, t_events *events)
     events->character.movesNbr++;
     printf("moves: %i\n", events->character.movesNbr);
     position = check_index_from_matrix(events->character.posiX, events->character.posiY, events->map.width);
-    if(events->map.content[position] == COLLECTIBLE)
+    if(events->map.content[position] == 'H' || events->map.content[position] == 'M')
         events->map.content[position] = SPACE;
     x = events->character.posiX * 40;
     y = events->character.posiY * 40 + 42;
     mlx_put_image_to_window(mlx, win, events->mapImg.imgPtr, 0, 0);
-    load_collectible_on_map(events->window, events->map, COLLECTIBLE_HP_PATH);
+    load_collectible_on_map(events->window, events->map);
     mlx_put_image_to_window(mlx, win, events->character.sprite.imgPtr, x, y);
     return(0);
 }
