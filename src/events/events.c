@@ -15,6 +15,8 @@ int     hook_character(int keycode, t_events *events)
     mlx = events->window.mlxPtr;
     win = events->window.winPtr;
     move_char(keycode, events);
+    events->character.movesNbr++;
+    printf("moves: %i\n", events->character.movesNbr);
     position = check_index_from_matrix(events->character.posiX, events->character.posiY, events->map.width);
     if(events->map.content[position] == COLLECTIBLE)
         events->map.content[position] = SPACE;

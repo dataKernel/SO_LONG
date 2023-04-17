@@ -28,6 +28,7 @@ int     main(void)
 	window = create_window(winWidth, winHeight, "so_long.exe");
 	mapImg = load_map(mapString, window);
 	character = load_character(window , mapString, CHAR_DOWN_1_PATH);
+	character.movesNbr = 0; //setup the move 
 	map = generate_matrix_map(mapString);
 	load_collectible_on_map(window, map, COLLECTIBLE_HP_PATH);
 	//debug checking collectible posi
