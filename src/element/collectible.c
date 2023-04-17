@@ -36,7 +36,6 @@ int     get_position_collectible(t_map map, int index)
             return(index);
         index++;
     }
-    //retourne une erreur si il y a un check collectible qui fail
     return(0);
 }
 
