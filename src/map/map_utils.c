@@ -51,3 +51,8 @@ void    rm_backslash_mapstring(char *map, char **dst)
     }
     (*dst)[j] = '\0';
 }
+
+void    init()
+{
+    
+}

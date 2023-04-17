@@ -1,33 +1,31 @@
 #include "../../include/collectible.h"
 #include "../../include/map_checking_utils.h"
 
-void    load_collectible_on_map(t_win window, t_map map)
+void    put_collectible_on_map(t_events *events)
 {
     int     index;
     
     index = 0;
-    while(map.content[index])
+    while(events->map.content[index])
     {
-        if(map.content[index] == 'H')
-            load_collectible(window, map, COLLECTIBLE_HP_PATH, index);
-        else if(map.content[index] == 'M')
-            load_collectible(window, map, COLLECTIBLE_MANA_PATH, index);
+        if(events->map.content[index] == 'H')
+            put_collectible(events->window, events->map, &events->collectibleSprite[0], index);
+        else if(events->map.content[index] == 'M')
+            put_collectible(events->window, events->map, &events->collectibleSprite[1], index);
         index++;
     }
 }
 
-void    load_collectible(t_win window, t_map map, char *spritePath, int index)
+void    put_collectible(t_win window, t_map map, t_img *sprite, int index)
 {
-    t_coll      collectible;
     int         x;
     int         y;
     
-    collectible.sprite = create_sprite(spritePath, window.mlxPtr);
-    collectible.posiX = get_position_collectible(map, index) % map.width;
-    collectible.posiY = get_position_collectible(map, index) / map.width;
-    x = collectible.posiX * 40;
-    y = collectible.posiY * 40 + 42;
-    mlx_put_image_to_window(window.mlxPtr, window.winPtr, collectible.sprite.imgPtr, x, y);
+    x = get_position_collectible(map, index) % map.width;
+    y = get_position_collectible(map, index) / map.width;
+    x *= 40;
+    y =  y * 40 + 42;
+    mlx_put_image_to_window(window.mlxPtr, window.winPtr, sprite->imgPtr, x, y);
 }
 
 int     get_position_collectible(t_map map, int index)

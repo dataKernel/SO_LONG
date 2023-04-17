@@ -12,7 +12,6 @@ int     main(void)
 {
 	t_events 		events;
 	t_char 			character;
-	t_coll 			collectible;
 	t_win 			window;
 	t_img 			mapImg;
 	t_map 			map;
@@ -29,15 +28,18 @@ int     main(void)
 	mapImg = load_map(mapString, window);
 	character = load_character(window , mapString, CHAR_DOWN_1_PATH);
 	character.movesNbr = 0; //setup the move 
+	character.collectibles = 0;
 	map = generate_matrix_map(mapString);
-	load_collectible_on_map(window, map, COLLECTIBLE_HP_PATH);
 	//debug checking collectible posi
 	//set events
-	events.character = character;
 	events.window = window;
 	events.mapImg = mapImg;
 	events.map = map;
+	events.character = character;
+	events.collectibleSprite[0] = create_sprite(COLLECTIBLE_HP_PATH, window.mlxPtr);
+	events.collectibleSprite[1] = create_sprite(COLLECTIBLE_MANA_PATH, window.mlxPtr);
 	//push hook
+	put_collectible_on_map(&events);
 	mlx_key_hook(window.winPtr, hook_character, &events);
 	mlx_loop(window.mlxPtr);
 	return(0);

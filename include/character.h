@@ -6,6 +6,7 @@
 typedef struct      s_character
 {
     t_img   sprite;
+    int     collectibles;
     int     movesNbr;
     int     posiX;
     int     posiY;

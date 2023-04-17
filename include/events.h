@@ -14,6 +14,7 @@ typedef struct      s_events
 {
     t_char  character;
     t_win   window;
+    t_img   collectibleSprite[2];
     t_img   mapImg;
     t_map   map;
 }t_events;
