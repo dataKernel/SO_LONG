@@ -31,7 +31,6 @@ int     hook_character(int keycode, t_events *events)
 
 void    move_char(int direction, t_events *events)
 {
-    printf("moves: %i\n", events->character.movesNbr);
     if(direction == TOP)
     {
         move_char_position_top(events);
@@ -52,4 +51,5 @@ void    move_char(int direction, t_events *events)
         move_char_position_left(events);
         events->character.movesNbr++;
     }
+    printf("moves: %i\n", events->character.movesNbr);
 }
