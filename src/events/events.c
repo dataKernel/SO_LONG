@@ -4,7 +4,7 @@
 #include "../../include/events.h"
 #include <stdio.h>
 
-int     hook_character(int keycode, t_events *events)
+int     hook_character(int keycode, t_gameState *events)
 {
     void    *mlx;
     void    *win;
@@ -29,7 +29,7 @@ int     hook_character(int keycode, t_events *events)
     return(0);
 }
 
-void    move_char(int direction, t_events *events)
+void    move_char(int direction, t_gameState *events)
 {
     if(direction == TOP)
     {

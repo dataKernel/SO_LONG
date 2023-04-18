@@ -10,17 +10,17 @@
 # define RIGHT 124
 # define LEFT 123
 
-typedef struct      s_events
+typedef struct      t_gameState
 {
     t_char  character;
     t_win   window;
     t_img   collectibleSprite[2];
     t_img   mapImg;
     t_map   map;
-}t_events;
+}t_gameState;
 
-void    move_char(int direction, t_events *events);
-int     hook_character(int keycode, t_events *events);
+void    move_char(int direction, t_gameState *events);
+int     hook_character(int keycode, t_gameState *events);
 int     check_key(int keycode);
 
 #endif

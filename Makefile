@@ -11,9 +11,10 @@ OBJS 	=	src/map/map_checking_utils.o \
 			src/image/image_utils.o \
 			src/map/map_checking.o \
 			src/events/events.o \
-			src/map/map_utils.o\
+			src/map/map_utils.o \
 			src/image/image.o \
 			src/map/map.o \
+			src/init.o \
 			main.o \
 
 LIB		= 	-L libx_opengl -lmlx -framework OpenGL -framework AppKit -lz
@@ -38,6 +39,16 @@ src/map/map_checking_utils.o: 	src/map/map_checking_utils.c \
 								include/image.h \
 								libx_opengl/mlx.h
 								$(CC) src/map/map_checking_utils.c -c -o src/map/map_checking_utils.o $(FLAGS)
+
+src/init.o :					src/init.c \
+								include/init.h \
+								include/map_checking_utils.h \
+								include/collectible.h \
+								include/image_utils.h \
+								include/image.h \
+								include/character.h \
+								libx_opengl/mlx.h
+								$(CC) src/init.c -c -o src/init.o $(FLAGS)
 
 src/map/map.o: 					src/map/map.c \
 								include/map_checking_utils.h \

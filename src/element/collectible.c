@@ -1,7 +1,7 @@
 #include "../../include/collectible.h"
 #include "../../include/map_checking_utils.h"
 
-void    put_collectible_on_map(t_events *events)
+void    put_collectible_on_map(t_gameState *events)
 {
     int     index;
     
