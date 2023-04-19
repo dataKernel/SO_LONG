@@ -5,4 +5,5 @@
 #include "../include/events.h"
 #include "../include/map.h"
 
-t_gameState    init_prog();
+void    init_prog(t_gameState *game);
+void    load_prog_on_win(t_gameState *game);

@@ -1,17 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "../../include/map_checking_utils.h"
 #include "../../include/image_utils.h"
 #include "../../include/image.h"
-
 
 t_win   create_window(char *mapString, char *title)
 {
     t_win   window;
 
-    window.width = check_width_line(mapString);
-    window.height = check_height_column(mapString);
+    window.width = check_width_line(mapString) * 40;
+    window.height = check_height_column(mapString) * 40 + 42;
     window.title = title;
     window.mlxPtr = mlx_init();
     window.winPtr = mlx_new_window(window.mlxPtr, window.width, window.height, title);

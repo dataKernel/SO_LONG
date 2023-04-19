@@ -7,7 +7,6 @@ t_map    generate_matrix_map(char *mapString)
 {
     t_map   map;
 
-
     map.width = check_width_line(mapString);
     map.height = check_height_column(mapString);
     rm_backslash_mapstring(mapString, &(map.content));
@@ -64,13 +63,12 @@ t_img    load_map(char *mapString, t_win window)
 {
     t_img   *spriteTabPtr;
     t_img   map;
-
+    
     map = create_image(window.width, window.height, window.mlxPtr);
     spriteTabPtr = load_sprite(window.mlxPtr);
     generate_wall_top(map, spriteTabPtr);
     generate_map_content(mapString, map, spriteTabPtr);
     free(spriteTabPtr);
-    mlx_put_image_to_window(window.mlxPtr, window.winPtr, map.imgPtr, 0, 0);
     return(map);
 }
 

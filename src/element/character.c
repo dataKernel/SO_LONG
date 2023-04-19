@@ -12,7 +12,6 @@ t_char      load_character(t_win window, char *mapString, char *spritePath)
     character.posiY = get_position_character(mapString) / check_width_line(mapString);
     x = character.posiX * 40;
     y = character.posiY * 40 + 42;
-    mlx_put_image_to_window(window.mlxPtr, window.winPtr, character.sprite.imgPtr, x, y);
     return(character);
 }
 
