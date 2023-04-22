@@ -38,3 +38,13 @@ void    load_prog_on_win(t_gameState *game)
     mlx_put_image_to_window(mlxPtr, winPtr, imgPtr, x, y);
     put_collectible_on_map(game);
 }
+
+void    destroy_img_tab(t_img *tabImg)
+{
+    
+}
+
+void    destroy_img(t_img img)
+{
+    
+}

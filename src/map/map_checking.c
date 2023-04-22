@@ -38,10 +38,9 @@ bool    check_map_is_rectangular(char *str)
     i = 0;
     j = 0;
     firstLine = 0;
-    //on compte le nombre de char par ligne
     while(str[firstLine] != '\n')
         firstLine++;
-    i = firstLine + 1; //on va directement a la 2eme ligne
+    i = firstLine + 1;
     while(str[i])
     {
         if(str[i] == '\n')

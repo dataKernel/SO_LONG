@@ -63,11 +63,18 @@ t_img    load_map(char *mapString, t_win window)
 {
     t_img   *spriteTabPtr;
     t_img   map;
+    int     i;
     
     map = create_image(window.width, window.height, window.mlxPtr);
     spriteTabPtr = load_sprite(window.mlxPtr);
     generate_wall_top(map, spriteTabPtr);
     generate_map_content(mapString, map, spriteTabPtr);
+    i = 0; 
+    while(i < 23)
+    {
+        mlx_destroy_image(window.mlxPtr, spriteTabPtr[i].imgPtr);
+        i++;
+    }
     free(spriteTabPtr);
     return(map);
 }
