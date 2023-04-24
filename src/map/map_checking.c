@@ -36,7 +36,6 @@ bool    check_map_is_rectangular(char *str)
     int     j;
 
     i = 0;
-    //toto
     j = 0;
     firstLine = 0;
     while(str[firstLine] != '\n')
@@ -47,17 +46,15 @@ bool    check_map_is_rectangular(char *str)
         if(str[i] == '\n')
         {
             if(j != firstLine)
-            {
                 return(false);
-            }
             j = 0;
         }
-        j++;
+        if(str[i] != '\n')
+            j++;
         i++;
     }
     return(true);
 }
-
 
 bool    check_map_is_walled(char *str, int width, int height)
 {
@@ -71,7 +68,7 @@ bool    check_map_is_walled(char *str, int width, int height)
             return(false);
         i++;
     }
-    i = ((width + 1) * height) - 2;
+    i = (width * height) - 2;
     last_posi = i;
     while(i > (last_posi - (width - 1)))
     {
@@ -91,11 +88,11 @@ bool	check_player_is_close_exit(char *str, int widthLine)
 	{
 		if(str[i] == EXIT)
 		{
-			if(str[i + 1] != PLAYER &&
-			str[i - 1] != PLAYER &&
-			str[i - widthLine] != PLAYER &&
-			str[i + widthLine] != PLAYER)
-			return(false);
+			if(str[i + 1] != PLAYER && 
+                str[i - 1] != PLAYER && 
+                str[i - widthLine] != PLAYER && 
+                str[i + widthLine] != PLAYER)
+			    return(false);
 		}
 		i++;
 	}
@@ -109,6 +106,7 @@ bool	check_map_has_path(char *str)
 	int		i;
 
 	widthLine = check_width_line(str);
+    printf("width: %i\n", widthLine);
 	check = true;
     while(check)
     {

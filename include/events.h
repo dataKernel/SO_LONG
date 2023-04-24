@@ -1,7 +1,7 @@
 #ifndef EVENTS_H
 # define EVENTS_H
 
-#include "map.h"
+# include "map.h"
 # include "image.h"
 # include "character.h"
 

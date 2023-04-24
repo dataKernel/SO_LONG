@@ -1,13 +1,11 @@
 #include "../include/init.h"
 #include <stdio.h>
 
-void    init_prog(t_gameState *game)
+void    init_prog(t_gameState *game, char *mapString)
 {
     t_char          character;
     t_win           window;
-    char            *mapString;
-    
-    mapString = read_map("assets/maps/map.ber");
+
     window = create_window(mapString, "so_long.exe");
     character = load_character(window, mapString, CHAR_DOWN_1_PATH);    
     character.movesNbr = 0;
@@ -18,6 +16,33 @@ void    init_prog(t_gameState *game)
     game->character = character;
     game->collectibleSprite[0] = create_sprite(COLLECTIBLE_HP_PATH, window.mlxPtr);
     game->collectibleSprite[1] = create_sprite(COLLECTIBLE_MANA_PATH, window.mlxPtr);
+}
+
+bool    load_checking(t_gameState *game, char *mapString)
+{
+    bool    check;
+    
+    if(!check_map_has_PER(mapString))
+    {
+        printf("ERROR: the map has PER error...");
+        return(false);
+    }
+    if(!check_map_is_rectangular(mapString))
+    {
+        printf("ERROR: the map is not rectangular...");
+        return(false);
+    }
+    if(!check_map_is_walled(mapString, game->map.width, game->map.height))
+    {
+        printf("ERROR: the map is not walled...");
+        return(false);
+    }
+    if(!check_map_has_path(mapString))
+    {
+        printf("ERROR: the map has not valid path...");
+        return(false);
+    }
+    return(true);
 }
 
 void    load_prog_on_win(t_gameState *game)
@@ -39,12 +64,3 @@ void    load_prog_on_win(t_gameState *game)
     put_collectible_on_map(game);
 }
 
-void    destroy_img_tab(t_img *tabImg)
-{
-    
-}
-
-void    destroy_img(t_img img)
-{
-    
-}
