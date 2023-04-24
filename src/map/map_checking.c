@@ -36,6 +36,7 @@ bool    check_map_is_rectangular(char *str)
     int     j;
 
     i = 0;
+    //toto
     j = 0;
     firstLine = 0;
     while(str[firstLine] != '\n')
