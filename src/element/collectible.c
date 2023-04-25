@@ -18,8 +18,8 @@ void    put_collectible_on_map(t_gameState *events)
 
 void    put_collectible(t_win window, t_map map, t_img *sprite, int index)
 {
-    int         x;
-    int         y;
+    int     x;
+    int     y;
     
     x = get_position_collectible(map, index) % map.width;
     y = get_position_collectible(map, index) / map.width;
@@ -48,7 +48,7 @@ int     check_collectible_nbr(t_map map)
     result = 0;
     while(map.content[i])
     {
-        if(map.content[i] == COLLECTIBLE)
+        if(map.content[i] == 'H' || map.content[i] == 'M')
             result++;
         i++;
     }

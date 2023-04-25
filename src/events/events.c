@@ -26,6 +26,7 @@ int     hook_character(int keycode, t_gameState *events)
     mlx_put_image_to_window(mlx, win, events->mapImg.imgPtr, 0, 0);
     put_collectible_on_map(events);
     mlx_put_image_to_window(mlx, win, events->character.sprite.imgPtr, x, y);
+    printf("collectibles: %i\n", events->character.collectibles);
     return(0);
 }
 

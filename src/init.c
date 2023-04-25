@@ -18,7 +18,7 @@ void    init_prog(t_gameState *game, char *mapString)
     game->collectibleSprite[1] = create_sprite(COLLECTIBLE_MANA_PATH, window.mlxPtr);
 }
 
-bool    load_checking(t_gameState *game, char *mapString)
+bool    load_checking_test_map(t_gameState *game, char *mapString)
 {
     bool    check;
     
@@ -42,6 +42,11 @@ bool    load_checking(t_gameState *game, char *mapString)
         printf("ERROR: the map has not valid path...");
         return(false);
     }
+    return(true);
+}
+
+bool    load_checking_ext()
+{
     return(true);
 }
 

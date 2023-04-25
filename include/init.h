@@ -9,7 +9,8 @@
 # include "../include/events.h"
 # include "../include/map.h"
 
-bool    load_checking(t_gameState *game, char *mapString);
+bool    load_checking_test_map(t_gameState *game, char *mapString);
+bool    load_checking_ext();
 void    init_prog(t_gameState *game, char *mapString);
 void    load_prog_on_win(t_gameState *game);
 
