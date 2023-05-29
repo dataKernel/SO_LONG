@@ -15,7 +15,7 @@ void    move_char_position_top(t_gameState *events)
     y = events->character.posiY;
     position = check_index_from_matrix(x, y, w);
     events->character.sprite = create_sprite(CHAR_TOP_1_PATH, events->window.mlxPtr);
-    if(map[position - w] == SPACE || map[position - w] == 'H' || map[position - w] == 'M')
+    if(map[position - w] == SPACE || map[position - w] == 'H' || map[position - w] == 'M' || map[position - w] == EXIT)
         events->character.posiY--;
 }
 
@@ -33,7 +33,7 @@ void    move_char_position_down(t_gameState *events)
     y = events->character.posiY;
     position = check_index_from_matrix(x, y, w);
     events->character.sprite = create_sprite(CHAR_DOWN_1_PATH, events->window.mlxPtr);
-    if(map[position + w] == SPACE || map[position + w] == 'H' || map[position + w] == 'M')
+    if(map[position + w] == SPACE || map[position + w] == 'H' || map[position + w] == 'M' || map[position + w] == EXIT)
         events->character.posiY++;
 }
 
@@ -51,7 +51,7 @@ void    move_char_position_right(t_gameState *events)
     y = events->character.posiY;
     position = check_index_from_matrix(x, y, w);
     events->character.sprite = create_sprite(CHAR_RIGHT_1_PATH, events->window.mlxPtr);
-    if(map[position + 1] == SPACE || map[position + 1] == 'H' || map[position + 1] == 'M')
+    if(map[position + 1] == SPACE || map[position + 1] == 'H' || map[position + 1] == 'M' || map[position + 1] == EXIT)
         events->character.posiX++;
 }
 
@@ -69,6 +69,6 @@ void    move_char_position_left(t_gameState *events)
     y = events->character.posiY;
     position = check_index_from_matrix(x, y, w);
     events->character.sprite = create_sprite(CHAR_LEFT_1_PATH, events->window.mlxPtr);
-    if(map[position - 1] == SPACE || map[position - 1] == 'H' || map[position - 1] == 'M')
+    if(map[position - 1] == SPACE || map[position - 1] == 'H' || map[position - 1] == 'M' || map[position - 1] == EXIT)
         events->character.posiX--;
 }
